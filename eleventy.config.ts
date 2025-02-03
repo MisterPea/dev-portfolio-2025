@@ -2,8 +2,10 @@ import "tsx/esm";
 import * as sass from "sass";
 import { renderToStaticMarkup } from "react-dom/server";
 import fs from 'node:fs';
+import path from 'node:path';
 import { glob } from 'glob';
 
+import createResponsiveImages from "./utils/imageProcessor";
 
 export default function (eleventyConfig: any) {
     /* 
@@ -14,7 +16,6 @@ export default function (eleventyConfig: any) {
 
     // Dependency map: key is the component, value is an array of layouts
     const dependencyMap: Record<string, string[]> = {};
-
 
     // Build the dependency map by scanning layouts
     async function buildDependencyMap() {
@@ -52,6 +53,14 @@ export default function (eleventyConfig: any) {
         }
     });
 
+    // This takes a specified image from /raw_images, resizes it and
+    // converts it to .webp
+    eleventyConfig.addShortcode('getImageLinks', function (src: string, className: string, alt: string, imageWidth: string) {
+        // const output = (jsxString) => jsxString;
+        const output = createResponsiveImages(src, className, alt, imageWidth);
+        return output;
+    });
+
     eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx");
     eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
         key: "11ty.js",
@@ -62,6 +71,10 @@ export default function (eleventyConfig: any) {
                 return `<!DOCTYPE html>\n
                 <html>
                     <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
+                        <link rel="preconnect" href="https://fonts.googleapis.com">
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
                         <link rel="stylesheet" href="/style/variables.css" />
                         <link rel="stylesheet" href="/style/main.css" />
                         <script type="text/javascript" src="/js/main.js"></script>
@@ -77,12 +90,18 @@ export default function (eleventyConfig: any) {
     eleventyConfig.addTemplateFormats("scss");
     eleventyConfig.addExtension("scss", {
         outputFileExtension: "css",
-        compile: async function (inputContent: any) {
-            let result = sass.compileString(inputContent);
-            return async () => {
-                return result.css;
-            };
-        }
+        compile: async function (inputContent: any, inputPath: any) {
+            if (!inputPath.endsWith("main.scss") && !inputPath.endsWith('variables.scss')) {
+                return;
+            }
+            let parsedPath = path.parse(inputPath);
+            let result = sass.compileString(inputContent, {
+                loadPaths: [parsedPath.dir || '.', this.config.dir.includes],
+
+            });
+            this.addDependencies(inputPath, result.loadedUrls);
+            return async (data: string) => result.css;
+        },
     });
 
     eleventyConfig.setServerOptions({
