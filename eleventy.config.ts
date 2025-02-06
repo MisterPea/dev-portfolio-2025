@@ -55,9 +55,8 @@ export default function (eleventyConfig: any) {
 
     // This takes a specified image from /raw_images, resizes it and
     // converts it to .webp
-    eleventyConfig.addShortcode('getImageLinks', function (src: string, className: string, alt: string, imageWidth: string) {
-        // const output = (jsxString) => jsxString;
-        const output = createResponsiveImages(src, className, alt, imageWidth);
+    eleventyConfig.addShortcode('getImageLinks', function (src: string, className: string, alt: string, imageWidth: string, placeholder?: any) {
+        const output = createResponsiveImages(src, className, alt, imageWidth, placeholder);
         return output;
     });
 

@@ -1,3 +1,18 @@
+@use "mixins.scss" as *;
+.header-blur_box {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  @include tablet {
+    height: 60px;
+  }
+}
+
 header {
   font-family: Rubik;
   font-size: 12px;
@@ -8,34 +23,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
-  position: absolute;
+  @include progressive-width;
+  padding-top: 5px;
+  position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
-  &::before {
-    content: "";
-    inset: 0;
-    position: absolute;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }
-
-  .backdrop-blur {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    z-index: 0;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  mix-blend-mode: difference;
 
   h1 {
     -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-color: #fafafa;
     color: #000000;
-    mix-blend-mode: difference;
     position: relative;
     z-index: 1;
   }
@@ -47,64 +48,66 @@ header {
     letter-spacing: 0.9px;
   }
 
-  .dark_mode-button {
+  .header-buttons_holder {
+    display: flex;
+    gap: 10px;
+  }
+
+  .header_button {
     background: none;
     border: none;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
     z-index: 1;
-    mix-blend-mode: difference;
   }
 
-  @media (hover: hover) {
-    .dark_mode-button:hover {
-      .svg-inner_div.light {
-        transform: translateY(-4px);
-      }
-      .svg-inner_div.dark {
-        transform: translateY(-37px);
-      }
+  .svg_wrapper {
+    height: 40px;
+    width: 40px;
+    padding: 1px;
+    svg {
+      padding: 7px;
+      height: 100%;
+      width: 100%;
     }
-    .dark_mode-button:active {
-      .svg-inner_div.light {
-        transform: translateY(0px);
-      }
-      .svg-inner_div.dark {
-        transform: translateY(-33px);
-      }
+  }
+
+  .home_svg {
+    position: absolute;
+    inset: 0;
+    svg {
+      padding: 7px;
+      fill: #fafafa;
+    }
+  }
+  .dark_mode_svg svg {
+    stroke: #fafafa;
+    line,
+    circle {
+      stroke: #fafafa;
     }
   }
 
   .svg-inner_div {
-    height: 30px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    // background-color: #ffffff;;
-
-    svg {
-      padding: 4px;
-      height: 100%;
-      width: 100%;
-      line {
-        stroke: #ffffff;
-      }
-      circle {
-        stroke: #ffffff;
-      }
-      path {
-        fill: #ffffff;
-      }
-    }
+    inset: 0;
     &.light {
       transform: translateY(0px);
     }
     &.dark {
-      transform: translateY(-33px);
+      transform: translateY(-40px);
+    }
+  }
+
+  @include tablet {
+    padding-top: 10px;
+    font-size: 16px;
+    .svg-inner_div {
+      height: 40px;
+      width: 40px;
     }
   }
 }

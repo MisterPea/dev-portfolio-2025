@@ -1,0 +1,45 @@
+.img-main {
+  width: 100%;
+  height: auto;
+  position: relative;
+  transform: translateZ(0);
+  display: inline-block;
+
+  img {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    // height: auto;
+    // opacity: 0;
+    // filter: blur(1px);
+    // will-change: transform, filter, opacity;
+  }
+}
+
+.placeholder {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  transition: opacity 1600ms var(--ease-out-cubic);
+  opacity: 1;
+}
+
+/*
+On load we need to swap positions.
+Without an image in position the 
+placeholder will not flow correctly
+*/
+.img-main.visible {
+  img {
+    position: relative;
+  }
+  .placeholder {
+    position: absolute;
+  }
+}
+
+

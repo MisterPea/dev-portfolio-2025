@@ -1,13 +1,44 @@
+@use "image-loading.scss" as *;
+@use "header.scss" as *;
+@use "landing.scss" as *;
+@use "landing-project" as *;
+@use "section-divider.scss" as *;
+@use "footer.scss" as *;
+@use "mixins.scss" as *;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: 'Courier New', Courier, monospace;
-  color: #443838;
+  margin: 0;
+  font-family: "Rubik", serif;
+  background-color: var(--background-color);
+  min-height: 100%;
 }
 
-h1 {
-  color: rgb(94, 94, 94);
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
 
 a {
-  color: palevioletred;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.main_wrapper {
+  @include progressive-width;
 }

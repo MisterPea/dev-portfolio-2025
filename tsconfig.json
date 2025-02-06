@@ -8,6 +8,7 @@
     "jsxImportSource": "react",
     "noEmit": true,
     "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
   },
   "exclude": [
     "node_modules",

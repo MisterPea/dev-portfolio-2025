@@ -31,7 +31,7 @@ const multipliers = [1, 2, 3];
  * @param {string} imageWidth How much of the screen width will the image occupy. Default is `100vw`
  * @returns {JSX.Element} Element is `<picture>`
  */
-export default function createResponsiveImages(imagePath: string, className?: string, alt?: string, imageWidth: string = '100vw'): JSX.Element {
+export default function createResponsiveImages(imagePath: string, className: string, alt: string, imageWidth: string = '100vw', Placeholder: any): JSX.Element {
   const { height, width } = sizeOf(`./raw_images/${imagePath}`);
   const multiple = height / width;
   const w = breakpoints[0].width;
@@ -48,16 +48,17 @@ export default function createResponsiveImages(imagePath: string, className?: st
 
   function _createImageTags(images: string[][], className = "", alt = "", sizes = "100vw", height: number, width: number) {
     return (
-      <picture className={`img-main${className ? ' ' + className : ''}`}>
+      <picture className={`img-main lazy${className ? ' ' + className : ''}`}>
         {breakpoints.map((breakpoint, i) => (
-          <source key={i} sizes={sizes} srcSet={images[i].join(", ")} media={`(min-width: ${breakpoint.width}px)`} />
+          <source key={i} sizes={sizes} data-srcset={images[i].join(", ")} media={`(min-width: ${breakpoint.width}px)`} />
         ))}
-        <img src={images[0][0].split(" ")[0]} alt={alt} width={`${width}`} height={`${height}`} loading="lazy" />
+        <img className="img-tag" src={null} data-src={images[0][0].split(" ")[0]} data-alt={alt} data-width={`${width}`} data-height={`${height}`} />
+        {Placeholder && <div className="placeholder"><Placeholder /></div>}
       </picture>
     );
   };
 
-  function generateResponsiveImages(imagePath) {
+  function generateResponsiveImages(imagePath: string) {
     const inputPath = `./raw_images/${imagePath}`;
     const filename = path.parse(imagePath).name;
     const ext = '.webp';
@@ -86,7 +87,7 @@ export default function createResponsiveImages(imagePath: string, className?: st
           }
         }
       } finally {
-        console.log("LOOP EXHAUSTED");
+        console.log('\u001b[' + 34 + 'm' + `Image tags created for: ${filename}${ext}` + '\u001b[0m');
         return outputImages;
       }
     }

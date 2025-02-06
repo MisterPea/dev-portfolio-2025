@@ -1,0 +1,41 @@
+// $mobile-vert: 600px;
+// $tablet-begin: 767px;
+$tablet: 767px;
+$desktop: 1024px;
+
+// @mixin hi-dpi-mobile {
+//   @media only screen and (min-resolution: 192dpi) and (max-width: 767px) and (max-device-width: 767px) {
+//     @content;
+//   }
+// }
+
+// @mixin tablet-and-above {
+//   @media only screen and (min-width: #{$mobile-vert}) {
+//     @content;
+//   }
+// }
+
+// @mixin tablet-begin {
+//   @media only screen and (min-width: #{$tablet-begin}) {
+//     @content;
+//   }
+// }
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin progressive-width {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: clamp(10px, calc(10px + (240 * ((100vw - 768px) / (1200 - 320)))), 250px);
+  padding-right: clamp(10px, calc(10px + (240 * ((100vw - 768px) / (1200 - 320)))), 250px);
+}

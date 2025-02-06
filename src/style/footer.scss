@@ -1,0 +1,34 @@
+footer {
+  margin: 50px 0;
+  height: 50px;
+  nav {
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+.footer-svg_wrapper {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    fill: var(--text-color);
+  }
+}
+
+.footer-btn {
+  background: none;
+  border: none;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin: 0;
+}
+
