@@ -6,9 +6,8 @@ import { placeholder } from "./components/placeholder.tsx";
 import SectionDivider from "./components/SectionDivider.tsx";
 
 export function Index() {
-
     return (<>
-        <Header showHome={true} />
+        <Header showHome={false} />
         <div className="main_wrapper">
             <h1 className="landing-headline">I&apos;m Perry, a Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
                 <span><button>Say Hello!</button></span>
@@ -21,11 +20,11 @@ export function Index() {
                     title="Word Salad Sifter: Uncovering the important parts of job postings."
                     description="A Chrome Extension that gives users the power to uncover the important facets of job postings."
                     imageAlignment="left"
-                    link="#"
+                    link="/projects/word-salad-sifter"
 
                 />
                 <LandingProject
-                    images={this.getImageLinks("times_pilot_proj.WEBP", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
+                    images={this.getImageLinks("times_pilot_proj.png", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
                     title="the.times.pilot: Tailoring Your NY Times Digest"
                     description="Seamlessly curate and receive the stories that matter to you with a custom news aggregator and subscriber-focused daily email service."
                     imageAlignment="right"
@@ -50,8 +49,11 @@ export function Index() {
                         Outside of work, I enjoy drawing, playing the piano, and being an inquisitive musicophile.<br /><br />
                         If you&apos;re curious about my aural explorations, I&apos;m currently listening to: <span className="about-spotify_inline">Die Explosion im Festspielhaus</span> by <span className="about-spotify_inline">Einstürzende Neubauten</span> on Spotify.
                     </p>
+                    <p className="about-colophon-header">Colophon:</p>
+                    <p className="about-colophon-text">Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and <a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a> to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.</p>
                 </div>
             </section>
+            <div className="about_image_wrapper-too"></div>
         </div>
         <Footer />
     </>

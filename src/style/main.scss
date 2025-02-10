@@ -9,6 +9,9 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
+  background-color: var(--background-color);
+  transition: background-color 200ms linear;
+  will-change: background-color;
 }
 *,
 *:before,
@@ -19,8 +22,8 @@ html {
 body {
   margin: 0;
   font-family: "Rubik", serif;
-  background-color: var(--background-color);
-  min-height: 100%;
+
+  min-height: 100vh;
 }
 
 h1,
@@ -41,4 +44,9 @@ a {
 
 .main_wrapper {
   @include progressive-width;
+  opacity: 0;
+  transition: 1400ms opacity var(--ease-out-cubic);
+  &.is-interactive {
+    opacity: 1;
+  }
 }

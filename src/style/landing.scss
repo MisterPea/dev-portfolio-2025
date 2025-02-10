@@ -1,4 +1,7 @@
 @use "mixins.scss" as *;
+.landing-headline {
+  margin: 0 2%;
+}
 
 .landing-headline,
 .landing-headline button {
@@ -12,7 +15,9 @@
   letter-spacing: 0.54px;
   background: none;
   border: none;
+  
   @include tablet {
+    padding: 120px 0;
     font-size: 55px;
     letter-spacing: 0;
     line-height: 120%;
@@ -21,6 +26,7 @@
     font-size: 70px;
   }
 
+  // Underline for 'Say Hello'
   & button {
     padding: 0;
     color: var(--text-accent-one);

@@ -2,19 +2,21 @@
 :root {
   --background-color: #f5f5f5;
   --text-color: #000000;
+  --text-color-lighter: #999999;
   --text-accent-one: #00a8ce;
-  --svg-fill: #1e2124;
+  --project-back: hsl(34, 23%, 93%);
 }
 
 html[data-color-scheme="dark"] {
   --background-color: #1e2124;
   --text-color: #f5f5f5;
+  --text-color-lighter: #c4c4c4;
   --text-accent-one: #95ff00;
-  --svg-fill: 
-;
+  --project-back: hsl(210, 9%, 17%);
 }
 
 html {
   --easing-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --box-shadow: box-shadow: 2px 1px 4px 0px rgba(0, 0, 0, 0.5), 8px 8px 9px 0px rgba(0, 0, 0, 0.2);
 }

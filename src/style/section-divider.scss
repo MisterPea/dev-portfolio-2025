@@ -1,9 +1,10 @@
 @use "mixins.scss" as *;
 
 .section_divider {
-  width: 100%;
+  width: 96%;
   height: fit-content;
   border-bottom: 0.75px solid var(--text-color);
+  margin:0 auto;
   h2 {
     font-size: 20px;
     margin: 0;

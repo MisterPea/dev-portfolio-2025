@@ -22,6 +22,7 @@ header {
   letter-spacing: 2px;
   display: flex;
   justify-content: space-between;
+
   align-items: center;
   @include progressive-width;
   padding-top: 5px;
@@ -32,6 +33,7 @@ header {
   transform: translateX(-50%);
   z-index: 1000;
   mix-blend-mode: difference;
+  // margin: 0 min(1.5%, 10px);
 
   h1 {
     -webkit-text-stroke-width: 1.5px;
@@ -39,6 +41,7 @@ header {
     color: #000000;
     position: relative;
     z-index: 1;
+    margin-left: 2%;
   }
 
   span {
@@ -51,6 +54,7 @@ header {
   .header-buttons_holder {
     display: flex;
     gap: 10px;
+    padding-right: 2%;
   }
 
   .header_button {
@@ -94,11 +98,12 @@ header {
   .svg-inner_div {
     position: absolute;
     inset: 0;
+    
     &.light {
-      transform: translateY(0px);
+      transform: translateY(0px) translateZ(0);
     }
     &.dark {
-      transform: translateY(-40px);
+      transform: translateY(-40px) translateZ(0);
     }
   }
 

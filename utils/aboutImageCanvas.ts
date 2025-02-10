@@ -1,8 +1,6 @@
 import aboutImageBASE64 from './aboutImageData';
 
-import aboutImageBASE64 from './aboutImageData';
-
-const k = 10; // kernel size
+const k = 11; // kernel size
 const color = '#1e2124';
 
 function drawImage(): Promise<HTMLImageElement> {
@@ -92,7 +90,7 @@ function addImage(img: HTMLImageElement, container: HTMLElement) {
 }
 
 export default function createAboutImage() {
-  const container = document.querySelector('.about_image_wrapper') as HTMLElement;
+  const container = document.querySelector('.about_image_wrapper-too') as HTMLElement;
   container.innerHTML = ''; // Clear previous elements
 
   drawImage()

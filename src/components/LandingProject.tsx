@@ -5,17 +5,17 @@ interface LandingProjectProps {
   link: 'string';
 }
 
-export default function LandingProject({ images, title, description, imageAlignment, link}) {
+export default function LandingProject({ images, title, description, imageAlignment, link }) {
 
   return (
-    <article className="landing-project_card">
-      {images}
-      <div className="landing-project_card-text">
-        <h3 className="landing-project_card-h3">{title}</h3>
-        <p>{description}</p>
-      </div>
-      {/* </a> */}
-
-    </article>
+    <a href={link} className="project-anchor">
+      <article className={`landing-project_card--${imageAlignment}`}>
+        {images}
+        <div className="landing-project_card-text">
+          <h3 className="landing-project_card-h3">{title}</h3>
+          <p>{description}</p>
+        </div>
+      </article>
+    </a>
   );
 }

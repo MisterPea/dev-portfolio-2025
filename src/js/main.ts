@@ -1,4 +1,5 @@
-import { observer, applyImageIntersection, addObservers } from "./intersectionFunctions";
+import initiateAnimateTransition from "./animateTransition";
+import { addObservers } from "./intersectionFunctions";
 /**
  * Function to look at localStorage for dark-mode preference.
  * If none is found, we check the browser.
@@ -53,12 +54,13 @@ export function toggleDarkMode() {
 /**
  * Everything kicks off from here - Called when DOM content is ready.
  */
+
 document.addEventListener('DOMContentLoaded', () => {
   const prefersDarkMode = _getDarkModePref();
   const sunMoon = document.querySelector('.svg-inner_div') as HTMLDivElement;
+  const mainDiv = document.querySelector('.main_wrapper');
   if (sunMoon) {
     sunMoon.classList.add(prefersDarkMode);
-
     // we're requesting animation frame to add style in between updates to
     // prevent the animation from happening on initial load
     requestAnimationFrame(() => {
@@ -69,5 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
 
   addObservers('picture.lazy');
-});
 
+  if (mainDiv) {
+    mainDiv.classList.add("is-interactive");
+  }
+
+  initiateAnimateTransition();
+
+});
