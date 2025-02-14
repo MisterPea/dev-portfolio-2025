@@ -1,18 +1,30 @@
 /* Color */
 :root {
   --background-color: #f5f5f5;
+  --background-color-transp: #f5f5f5a5 ;
   --text-color: #000000;
   --text-color-lighter: #999999;
   --text-accent-one: #00a8ce;
-  --project-back: hsl(34, 23%, 93%);
+  --project-back: #f1eee9;
+  --proj-button-background: #f0f0f0;
+  --proj-button-border: #cccccc;
+  --word-salad-accent-one: #13952d;
+  --challenge-list-item: #808080;
+  --extra-border: hsl(25, 21%, 92%);
 }
 
 html[data-color-scheme="dark"] {
   --background-color: #1e2124;
+  --background-color-transp: #1e212414;
   --text-color: #f5f5f5;
   --text-color-lighter: #c4c4c4;
   --text-accent-one: #95ff00;
   --project-back: hsl(210, 9%, 17%);
+  --proj-button-background: #2b2b2b;
+  --proj-button-border: #626262;
+  --word-salad-accent-one: #68d87f;
+  --challenge-list-item: #b0b0b0;
+  --extra-border: hsl(195, 4%, 16%);
 }
 
 html {

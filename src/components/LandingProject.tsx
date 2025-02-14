@@ -9,7 +9,7 @@ export default function LandingProject({ images, title, description, imageAlignm
 
   return (
     <a href={link} className="project-anchor">
-      <article className={`landing-project_card--${imageAlignment}`}>
+      <article className={`landing-project_card card--${imageAlignment}`}>
         {images}
         <div className="landing-project_card-text">
           <h3 className="landing-project_card-h3">{title}</h3>

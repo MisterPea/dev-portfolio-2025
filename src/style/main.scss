@@ -1,6 +1,10 @@
+@use "project-page.scss" as *;
+@use "info-textbox.scss" as *;
+@use "description-role-tools.scss" as *;
+@use "project-headline.scss" as *;
 @use "image-loading.scss" as *;
 @use "header.scss" as *;
-@use "landing.scss" as *;
+@use "landing-headline.scss" as *;
 @use "landing-project" as *;
 @use "section-divider.scss" as *;
 @use "footer.scss" as *;
@@ -12,6 +16,7 @@ html {
   background-color: var(--background-color);
   transition: background-color 200ms linear;
   will-change: background-color;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -22,14 +27,15 @@ html {
 body {
   margin: 0;
   font-family: "Rubik", serif;
-
   min-height: 100vh;
 }
 
 h1,
 h2,
 h3,
-p {
+h4,
+p,
+figure {
   margin: 0;
 }
 
@@ -48,5 +54,123 @@ a {
   transition: 1400ms opacity var(--ease-out-cubic);
   &.is-interactive {
     opacity: 1;
+  }
+}
+
+hr {
+  margin: 25px 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 0.5px solid var(--text-color);
+  padding: 0;
+  opacity: 0.5;
+  @include tablet {
+    margin: 30px 0;
+  }
+}
+
+.hide_on_mobile {
+  display: none;
+}
+
+@include tablet {
+  .hide_on_tablet {
+    display: none;
+  }
+}
+
+.page_word-salad-sifter-approach-flowchart {
+  mix-blend-mode: difference;
+}
+
+section {
+  // background-color: rgba(193, 187, 179, 0.545);
+  margin: 50px 2%;
+  &:first-of-type {
+    margin: 0 2%;
+  }
+}
+
+article {
+  margin: 0 0 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@include tablet {
+  section {
+    // background-color: rgba(149, 168, 219, 0.545);
+  }
+  .hide_on_mobile,
+  article {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 35px;
+  }
+  article.full-width {
+    * {
+      grid-column: 1 / -1;
+    }
+  }
+  article.right-image {
+    div {
+      grid-column: 1 / 3;
+      grid-row: 1 / -1;
+    }
+    figure {
+      grid-column: 3 / -1;
+      padding: 0 auto;
+    }
+  }
+  article.left-image {
+    div {
+      grid-column: 3 / -1;
+      grid-row: 1 / -1;
+    }
+    figure {
+      grid-column: 1 / 3;
+    }
+  }
+  article.three-width-full-img {
+    div {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+    figure {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+  /* Challenges word salad sifter */
+  .word_salad-challenges {
+    row-gap: 30px;
+  }
+  .word_salad-challenges-one {
+    grid-column: 1 / 3;
+  }
+  .word_salad-challenges-two {
+    grid-column: 3 / -1;
+  }
+  .word_salad-challenges-three {
+    grid-column: 1 / -1;
+  }
+}
+
+@include desktop {
+  section {
+    margin: 120px 2%;
+  }
+  article {
+    margin: 0 0 180px;
+  }
+  article:last-child {
+      margin: 0;
+  }
+  article.full-width {
+    * {
+      grid-column: 3 / -1;
+    }
   }
 }

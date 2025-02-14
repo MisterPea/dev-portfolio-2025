@@ -6,6 +6,7 @@ import path from 'node:path';
 import { glob } from 'glob';
 
 import createResponsiveImages from "./utils/imageProcessor";
+import embedVideo from "./utils/videoProcessor";
 
 export default function (eleventyConfig: any) {
     /* 
@@ -60,20 +61,42 @@ export default function (eleventyConfig: any) {
         return output;
     });
 
+    // Takes specified video from /raw_videos, copies it and returns appropriate tags with video embedded
+    eleventyConfig.addShortcode('embedVideo', function (src: string, className?: string) {
+        const output = embedVideo(src, className);
+        return output;
+    });
+
+    const slugLookup = {
+        "word-salad-sifter": "Project : Word Salad Sifter Project",
+    };
+
+    eleventyConfig.addPassthroughCopy({ "src/fonts": "assets/fonts" });
+
     eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx");
     eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
         key: "11ty.js",
         compile: function () {
             return async function (data: any) {
+                const title = slugLookup[data.page.fileSlug] || 'The Development and Design Portfolio of Perry Angelora';
                 const content = await this.defaultRenderer(data);
                 const result = renderToStaticMarkup(content);
                 return `<!DOCTYPE html>\n
-                <html>
+                <html lang="en">
                     <head>
+                        <meta charset="utf-8">
+                        <title>${title}</title>
+                        <meta name="description" content="Perry's Portfolio - Developer / Designer / Technologist">
+                        <meta name="google" content="nositelinkssearchbox">
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                        <link rel="stylesheet" href="/style/variables.css" />
-                        <link rel="stylesheet" href="/style/main.css" />
-                        <script>
+                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/style/main.css" as="style">
+                        <link rel="stylesheet" href="/style/fonts.css">
+                        <link rel="stylesheet" href="/style/variables.css">
+                        <link rel="stylesheet" href="/style/main.css">
+                        <script defer>
                             (function () {
                                 let prefersDarkMode = localStorage.getItem("prefersDarkMode");
                                 if (!prefersDarkMode) {
@@ -83,10 +106,7 @@ export default function (eleventyConfig: any) {
                                 document.querySelector('html').setAttribute("data-color-scheme", prefersDarkMode);
                             })();
                         </script>
-                        <script rel="" type="text/javascript" src="/js/main.js"></script>
-                        <link rel="preconnect" href="https://fonts.googleapis.com">
-                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+                        <script src="/js/main.js" defer></script>
                     </head>
                     <body>
                     ${result}
@@ -100,7 +120,7 @@ export default function (eleventyConfig: any) {
     eleventyConfig.addExtension("scss", {
         outputFileExtension: "css",
         compile: async function (inputContent: any, inputPath: any) {
-            if (!inputPath.endsWith("main.scss") && !inputPath.endsWith('variables.scss')) {
+            if (!inputPath.endsWith("main.scss") && !inputPath.endsWith('variables.scss') && !inputPath.endsWith('fonts.scss')) {
                 return;
             }
             let parsedPath = path.parse(inputPath);

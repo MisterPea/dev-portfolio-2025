@@ -1,0 +1,129 @@
+@use "./mixins.scss" as *;
+
+.project_page-desc_role_tools {
+  // background-color: darkgray;
+  // margin: 0 2%;
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: fit-content;
+    column-gap: 35px;
+  }
+}
+
+.project_page {
+  &-description {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0.32px;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 20px;
+    }
+    @include desktop {
+      font-size: 24px;
+      letter-spacing: 0.38px;
+    }
+  }
+}
+
+@include tablet {
+  .project_page-desc_links {
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+  }
+  .project_page-tools_roles {
+    grid-column: 3 / -1;
+    grid-row: 1 / -1;
+  }
+}
+
+// buttons
+.project_page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  &-label {
+    display: flex;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-color);
+    background-color: var(--proj-button-background);
+    padding-top: 6px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 8px;
+    border: 1px solid var(--proj-button-border);
+    border-radius: 30px;
+    p {
+      height: fit-content;
+      text-align: center;
+    }
+  }
+  &-icon {
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  @include desktop {
+    &-label {
+      font-size: 18px;
+      padding-top: 7px;
+      padding-bottom: 5px;
+      padding-left: 14px;
+      padding-right: 10px;
+    }
+    &-icon {
+      margin-left: 5px;
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+// tools and roles
+.project_page-tools_roles {
+  h3 {
+    color: #808080;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  p {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0.32px;
+  }
+  @include tablet {
+    line-height: 140%;
+    margin: 0;
+    h3 {
+      font-size: 16px;
+    }
+  }
+  @include desktop {
+    p,
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+/* Per-page styles */
+.page_word-salad-sifter {
+  .project-sub_headline {
+    color: var(--word-salad-accent-one);
+  }
+  .project_page-description span {
+    color: var(--word-salad-accent-one);
+  }
+  .project_page-links-icon {
+    svg {
+      fill: var(--word-salad-accent-one);
+    }
+  }
+}

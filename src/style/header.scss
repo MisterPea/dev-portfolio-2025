@@ -6,8 +6,8 @@
   left: 0;
   top: 0;
   z-index: 10;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   @include tablet {
     height: 60px;
   }
@@ -22,7 +22,6 @@ header {
   letter-spacing: 2px;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   @include progressive-width;
   padding-top: 5px;
@@ -33,15 +32,15 @@ header {
   transform: translateX(-50%);
   z-index: 1000;
   mix-blend-mode: difference;
-  // margin: 0 min(1.5%, 10px);
 
   h1 {
-    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fafafa;
     color: #000000;
     position: relative;
     z-index: 1;
     margin-left: 2%;
+    font-weight: 500;
   }
 
   span {
@@ -79,6 +78,19 @@ header {
     }
   }
 
+  .home-button {
+    transform: scale(0);
+    animation: home-button-show 400ms var(--easing-expo) forwards;
+  }
+  @keyframes home-button-show {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   .home_svg {
     position: absolute;
     inset: 0;
@@ -98,7 +110,7 @@ header {
   .svg-inner_div {
     position: absolute;
     inset: 0;
-    
+
     &.light {
       transform: translateY(0px) translateZ(0);
     }

@@ -12,34 +12,32 @@ export function Index() {
             <h1 className="landing-headline">I&apos;m Perry, a Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
                 <span><button>Say Hello!</button></span>
             </h1>
-            <SectionDivider label="Selected Works" />
             <section className="landing-projects_section">
-
+                <SectionDivider label="Selected Works" className="landing-divider" />
                 <LandingProject
                     images={this.getImageLinks("word_salad_sifter_proj.png", "project_hero", "partial screen view of the Word Salad Sifter extension.", "100vw", placeholder.projWordSalad)}
                     title="Word Salad Sifter: Uncovering the important parts of job postings."
                     description="A Chrome Extension that gives users the power to uncover the important facets of job postings."
-                    imageAlignment="left"
+                    imageAlignment="one"
                     link="/projects/word-salad-sifter"
-
                 />
                 <LandingProject
                     images={this.getImageLinks("times_pilot_proj.png", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
                     title="the.times.pilot: Tailoring Your NY Times Digest"
                     description="Seamlessly curate and receive the stories that matter to you with a custom news aggregator and subscriber-focused daily email service."
-                    imageAlignment="right"
+                    imageAlignment="two"
                     link="#"
                 />
                 <LandingProject
                     images={this.getImageLinks("circuit_proj.png", "project_hero", "3-up of image of Circuit project", "100vw", placeholder.projCircuit)}
                     title="Circuit App: Time Management for Creatives"
                     description="An iOS app to empower creatives by bettering focus and eliminating burnout."
-                    imageAlignment="left"
+                    imageAlignment="three"
                     link="#"
                 />
             </section>
-            <SectionDivider label="About" />
             <section className="landing-about_section">
+                <SectionDivider label="About" className="landing-divider" />
                 <div className="landing-about_section-wrapper">
                     <div className="about_image_wrapper">
                         <AboutImage />
@@ -49,11 +47,12 @@ export function Index() {
                         Outside of work, I enjoy drawing, playing the piano, and being an inquisitive musicophile.<br /><br />
                         If you&apos;re curious about my aural explorations, I&apos;m currently listening to: <span className="about-spotify_inline">Die Explosion im Festspielhaus</span> by <span className="about-spotify_inline">Einstürzende Neubauten</span> on Spotify.
                     </p>
-                    <p className="about-colophon-header">Colophon:</p>
-                    <p className="about-colophon-text">Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and <a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a> to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.</p>
+                    <section className="colophon">
+                        <p className="about-colophon-header">Colophon:</p>
+                        <p className="about-colophon-text">Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and <a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a> to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.</p>
+                    </section>
                 </div>
             </section>
-            <div className="about_image_wrapper-too"></div>
         </div>
         <Footer />
     </>

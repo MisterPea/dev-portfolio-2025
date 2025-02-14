@@ -1,7 +1,11 @@
-export const observer = new IntersectionObserver((entries, obs) => {
+const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.isIntersecting) {
-      applyImageIntersection(entry.target);
+      const tagName = entry.target.tagName;
+      // detect if we're loading picture, video, or other
+      if (tagName === 'PICTURE') {
+        applyImageIntersection(entry.target as HTMLPictureElement);
+      }
       obs.unobserve(entry.target);
     }
   });
@@ -11,13 +15,19 @@ export const observer = new IntersectionObserver((entries, obs) => {
   threshold: 0.1,
 });
 
+export function applyVideoIntersection() {
 
-export function applyImageIntersection(target) {
-  const sources: HTMLSourceElement[] = target.querySelectorAll('source');
+}
+
+
+function applyImageIntersection(target: HTMLPictureElement) {
+  const sources: HTMLSourceElement[] = [...target.querySelectorAll('source')];
   const imgElement: HTMLImageElement = target.querySelector('img');
   const placeholder: HTMLDivElement = target.querySelector('.placeholder');
 
-  // Swap <source> srcset;
+  // To defer loading, all properties are stored as `data-xxx`
+  // To load we swap all `data-xxx` for their non-data equivalent:
+  // e.g. `data-src` becomes `src` — `data-srcset`  becomes `srcset`
   sources.forEach((source) => {
     const dataSrcset = source.getAttribute('data-srcset');
     if (dataSrcset) {
@@ -26,15 +36,16 @@ export function applyImageIntersection(target) {
     }
   });
 
-  // Swap <img> src
   const dataSrc = imgElement.getAttribute('data-src');
   const dataAlt = imgElement.getAttribute('data-alt');
   const dataHeight = imgElement.getAttribute('data-height');
   const dataWidth = imgElement.getAttribute('data-width');
 
   if (dataSrc && dataAlt && dataHeight && dataWidth) {
+    // Initiate adding of the image to the DOM
     imgElement.addEventListener('load', () => {
       placeholder.style.opacity = '0';
+      handlePlaceholderRemoval(placeholder);
     }, { 'once': true });
 
     imgElement.setAttribute('src', dataSrc);
@@ -47,8 +58,14 @@ export function applyImageIntersection(target) {
     imgElement.removeAttribute('data-height');
     imgElement.removeAttribute('data-width');
   }
-
   target.classList.add('visible');
+}
+
+// Remove placeholder div after transitionend of main element
+function handlePlaceholderRemoval(placeholder: HTMLDivElement) {
+  placeholder.addEventListener('transitionend', () => {
+    placeholder.remove();
+  }, { once: true });
 }
 
 export function addObservers(tagOrClass: string) {

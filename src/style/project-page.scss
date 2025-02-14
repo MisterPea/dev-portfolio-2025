@@ -1,0 +1,49 @@
+@use "./mixins.scss" as *;
+
+
+
+.page_word-salad-sifter-approach-one-img {
+  overflow: hidden;
+  background-color: #303030;
+  border-radius: 15px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 10px 20px,
+    rgba(0, 0, 0, 0.35) 0px 6px 6px;
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@include desktop {
+  .page_word-salad-sifter-approach-one-wrap {
+    background-color: var(--extra-border);
+    aspect-ratio: 1.5 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  .page_word-salad-sifter-approach-one-img {
+    width: 389px;
+    height: auto;
+  }
+}
+
+.page_word-salad-sifter-approach-three-wrapper {
+  & img {
+    border: 0.5px solid #8a8a8a;
+    border-radius: 5px;
+  }
+}
+
+.project-video {
+  display: block;
+  video {
+    width: 100%;
+    height: auto;
+    border: 0.5px solid #8a8a8a;
+    border-radius: 5px;
+  }
+}
