@@ -7,6 +7,7 @@ import { glob } from 'glob';
 
 import createResponsiveImages from "./utils/imageProcessor";
 import embedVideo from "./utils/videoProcessor";
+import { JSX } from "react";
 
 export default function (eleventyConfig: any) {
     /* 
@@ -62,8 +63,8 @@ export default function (eleventyConfig: any) {
     });
 
     // Takes specified video from /raw_videos, copies it and returns appropriate tags with video embedded
-    eleventyConfig.addShortcode('embedVideo', function (src: string, className?: string) {
-        const output = embedVideo(src, className);
+    eleventyConfig.addShortcode('embedVideo', function (src: string, placeholder: JSX.Element, className?: string,) {
+        const output = embedVideo(src, placeholder, className,);
         return output;
     });
 
