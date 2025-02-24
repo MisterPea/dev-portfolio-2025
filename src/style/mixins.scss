@@ -2,6 +2,7 @@
 // $tablet-begin: 767px;
 $tablet: 767px;
 $desktop: 1024px;
+$desktop-lg: 1350px;
 
 // @mixin hi-dpi-mobile {
 //   @media only screen and (min-resolution: 192dpi) and (max-width: 767px) and (max-device-width: 767px) {
@@ -29,6 +30,12 @@ $desktop: 1024px;
 
 @mixin desktop {
   @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media screen and (min-width: #{$desktop-lg}) {
     @content;
   }
 }

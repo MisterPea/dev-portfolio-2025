@@ -1,3 +1,5 @@
+@use "circuit-diagram.scss" as *;
+@use "project-video.scss" as *;
 @use "project-page.scss" as *;
 @use "info-textbox.scss" as *;
 @use "description-role-tools.scss" as *;
@@ -28,6 +30,7 @@ body {
   margin: 0;
   font-family: "Rubik", serif;
   min-height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -80,7 +83,8 @@ hr {
   }
 }
 
-.page_word-salad-sifter-approach-flowchart {
+.page_word-salad-sifter-approach-flowchart,
+.page_times_pilot-approach-flowchart {
   mix-blend-mode: difference;
 }
 
@@ -166,7 +170,7 @@ article {
     margin: 0 0 180px;
   }
   article:last-child {
-      margin: 0;
+    margin: 0;
   }
   article.full-width {
     * {

@@ -15,25 +15,25 @@ export function Index() {
             <section className="landing-projects_section">
                 <SectionDivider label="Selected Works" className="landing-divider" />
                 <LandingProject
-                    images={this.getImageLinks("word_salad_sifter_proj.png", "project_hero", "partial screen view of the Word Salad Sifter extension.", "100vw", placeholder.projWordSalad)}
+                    images={this.getImageLinks("word_salad_sifter_hero.png", "project_hero", "partial screen view of the Word Salad Sifter extension.", "100vw", placeholder.projWordSalad)}
                     title="Word Salad Sifter: Uncovering the important parts of job postings."
                     description="A Chrome Extension that gives users the power to uncover the important facets of job postings."
                     imageAlignment="one"
                     link="/projects/word-salad-sifter"
                 />
                 <LandingProject
-                    images={this.getImageLinks("times_pilot_proj.png", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
+                    images={this.getImageLinks("times_pilot_hero_single.png", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
                     title="the.times.pilot: Tailoring Your NY Times Digest"
                     description="Seamlessly curate and receive the stories that matter to you with a custom news aggregator and subscriber-focused daily email service."
                     imageAlignment="two"
-                    link="#"
+                    link="/projects/the-times-pilot"
                 />
                 <LandingProject
-                    images={this.getImageLinks("circuit_proj.png", "project_hero", "3-up of image of Circuit project", "100vw", placeholder.projCircuit)}
+                    images={this.getImageLinks("circuit_hero.png", "project_hero", "3-up of image of Circuit project", "100vw", placeholder.projCircuitHero)}
                     title="Circuit App: Time Management for Creatives"
                     description="An iOS app to empower creatives by bettering focus and eliminating burnout."
                     imageAlignment="three"
-                    link="#"
+                    link="/projects/circuit-app"
                 />
             </section>
             <section className="landing-about_section">

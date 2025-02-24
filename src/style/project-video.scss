@@ -1,0 +1,25 @@
+.project-video {
+  display: block;
+  position: relative;
+  video {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border: 0.5px solid #8a8a8a;
+    border-radius: 5px;
+  }
+  .placeholder {
+    position: relative;
+    opacity: 0.9;
+    top: 0;
+  }
+}
+
+.project-video.visible {
+  video {
+    position: relative;
+  }
+  .placeholder {
+    position: absolute;
+  }
+}

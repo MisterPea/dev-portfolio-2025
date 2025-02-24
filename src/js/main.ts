@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
 
   addObservers('picture.lazy');
+  addObservers('figure.lazy')
 
   if (mainDiv) {
     mainDiv.classList.add("is-interactive");

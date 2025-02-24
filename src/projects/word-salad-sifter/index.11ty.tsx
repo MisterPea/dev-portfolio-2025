@@ -14,7 +14,6 @@ export function Index() {
       <ProjectHeadline
         headline="Word Salad Sifter"
         subHeadline="Uncovering The Important Parts In Job Postings"
-        accentColor="#13952D"
         image={this.getImageLinks("word_salad_sifter_page_hero.png", "project_page_hero", "Screen view of Word Salad Sifter", "100vw", placeholder.projWordSaladHero)}
         className="page_word-salad-sifter"
       />
@@ -52,7 +51,7 @@ export function Index() {
             headline="Provide Continuous Feedback"
             bodyText="Word Salad Sifter keeps users informed throughout the process. Because parsing time varies based on text length and network conditions, users receive status updates throughout the process."
           />
-          {this.embedVideo("word_salad_sifter-in_progress.mp4", "word_salad-video")}
+          {this.embedVideo("word_salad_sifter-in_progress.mp4", placeholder.projWordSaladVideo, "word_salad-video")}
         </article>
         <article className="project-section-approach-article right-image">
           <InfoTextbox

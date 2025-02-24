@@ -127,3 +127,40 @@
     }
   }
 }
+
+.page_the-times-pilot {
+  .project-sub_headline {
+    color: var(--times-pilot-accent-one);
+  }
+  .project_page-description span {
+    color: var(--times-pilot-accent-one);
+  }
+  .project_page-links-icon {
+    svg {
+      fill: var(--times-pilot-accent-one);
+    }
+  }
+}
+
+.page_circuit-app-hero_wrap {
+  display: flex;
+  // gap: 20px;
+  gap: clamp(20px, 5.5vw, 80px);
+  img {
+    border-radius: 17.2% / 7.8%;
+  }
+}
+
+.page_circuit-app {
+  .project-sub_headline {
+    color: var(--circuit-app-accent-one);
+  }
+  .project_page-description span {
+    color: var(--circuit-app-accent-one);
+  }
+  .project_page-links-icon {
+    svg {
+      fill: var(--circuit-app-accent-one);
+    }
+  }
+}

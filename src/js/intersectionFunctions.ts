@@ -1,11 +1,8 @@
-const observer = new IntersectionObserver((entries, obs) => {
+// Observer for images
+const imageObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.isIntersecting) {
-      const tagName = entry.target.tagName;
-      // detect if we're loading picture, video, or other
-      if (tagName === 'PICTURE') {
-        applyImageIntersection(entry.target as HTMLPictureElement);
-      }
+      applyImageIntersection(entry.target as HTMLPictureElement);
       obs.unobserve(entry.target);
     }
   });
@@ -15,10 +12,19 @@ const observer = new IntersectionObserver((entries, obs) => {
   threshold: 0.1,
 });
 
-export function applyVideoIntersection() {
-
-}
-
+// Observer for images
+const videoObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach((entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) {
+      applyVideoIntersection(entry.target as HTMLPictureElement);
+      obs.unobserve(entry.target);
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '100px',
+  threshold: 0.1,
+});
 
 function applyImageIntersection(target: HTMLPictureElement) {
   const sources: HTMLSourceElement[] = [...target.querySelectorAll('source')];
@@ -61,6 +67,25 @@ function applyImageIntersection(target: HTMLPictureElement) {
   target.classList.add('visible');
 }
 
+function applyVideoIntersection(target: HTMLElement) {
+  const video: HTMLVideoElement = target.querySelector('video');
+  const source: HTMLSourceElement = target.querySelector('source');
+  const placeholder: HTMLDivElement = target.querySelector('.placeholder');
+
+  const dataSrc = source.getAttribute('data-src');
+  if (dataSrc && video) {
+    video.addEventListener('loadeddata', () => {
+      placeholder.style.opacity = '0';
+      target.classList.add('visible');
+      handlePlaceholderRemoval(placeholder);
+    }, { 'once': true });
+
+    source.setAttribute('src', dataSrc);
+    source.removeAttribute('data-src');
+  }
+  video.load();
+}
+
 // Remove placeholder div after transitionend of main element
 function handlePlaceholderRemoval(placeholder: HTMLDivElement) {
   placeholder.addEventListener('transitionend', () => {
@@ -70,6 +95,12 @@ function handlePlaceholderRemoval(placeholder: HTMLDivElement) {
 
 export function addObservers(tagOrClass: string) {
   document.querySelectorAll(tagOrClass).forEach((element) => {
-    observer.observe(element);
+    if (element.tagName === 'PICTURE') {
+      imageObserver.observe(element);
+    }
+
+    if (element.classList.contains('project-video')) {
+      videoObserver.observe(element);
+    }
   });
 }

@@ -15,10 +15,22 @@ export default function Header({ showHome = true }: { showHome: boolean; }) {
           <button aria-label="Toggle Dark Mode" className="dark_mode-button header_button">
             <div className="svg-inner_div">
               <div className="svg_wrapper dark_mode_svg sun_wrapper">
-                <svg fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg fill="none" strokeWidth="1.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x2="12" y2="1" x1="12" y1="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x2="4.22" y2="4.22" x1="5.64" y1="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x2="1" y2="12" x1="3" y1="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x2="4.22" y2="19.78" x1="5.64" y1="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
               </div>
               <div className="svg_wrapper dark_mode_svg moon_wrapper">
-                <svg fill="none" strokeWidth="1.5" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path></svg>
+                <svg fill="none" strokeWidth="1.5" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path>
+                </svg>
               </div>
             </div>
           </button>

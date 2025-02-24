@@ -8,9 +8,10 @@ import { JSX } from "react/jsx-runtime";
  * 
  * @param {string} videoPath The name of the video to implement - video should be located in `./raw_videos`
  * @param {string?} className Optional className to add on to `<figure>`
+ * @param {JSX.Element} placeholder SVG-based placeholder element
  * @returns {JSX.Element} Element is `<figure>`
  */
-export default function embedVideo(videoPath: string, className?: string): JSX.Element {
+export default function embedVideo(videoPath: string, Placeholder: any, className?: string): JSX.Element {
 
   // Output directory
   const outputDir = "dist/assets/videos";
@@ -30,10 +31,14 @@ export default function embedVideo(videoPath: string, className?: string): JSX.E
   });
 
   return (
-    <figure className={`project-video${className ? " " + className : ""}`}>
-      <video autoPlay muted loop playsInline preload="auto">
-        <source src={`/assets/videos/${videoPath}`} type="video/mp4" />
+    <figure className={`project-video lazy${className ? " " + className : ""}`}>
+      <video autoPlay muted loop playsInline preload="none">
+        {/* <video autoPlay muted loop playsInline preload="auto"> */}
+        <source data-src={`/assets/videos/${videoPath}`} type="video/mp4" />
       </video>
+      <div className="placeholder">
+        <Placeholder />
+      </div>
     </figure>
   );
-}
+} 

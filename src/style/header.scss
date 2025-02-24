@@ -117,6 +117,25 @@ header {
     &.dark {
       transform: translateY(-40px) translateZ(0);
     }
+    line {
+      transition: stroke-dashoffset 600ms var(--ease-in-out-expo);
+      stroke-dasharray: 10px;
+      stroke-dashoffset: 0px;
+    }
+    .dark_mode_svg {
+      transition: transform 500ms var(--ease-in-out-expo);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        line {
+          stroke-dashoffset: 9.9px;
+        }
+        .dark_mode_svg {
+          transform: rotate(-24deg);
+        }
+      }
+    }
   }
 
   @include tablet {

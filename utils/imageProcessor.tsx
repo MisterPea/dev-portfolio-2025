@@ -14,9 +14,9 @@ if (!fs.existsSync(outputDir)) {
 
 // Define breakpoints and multipliers
 const breakpoints = [
-  { name: "small", width: 640 },
+  { name: "large", width: 1920 },
   { name: "medium", width: 1280 },
-  { name: "large", width: 1920 }
+  { name: "small", width: 640 },
 ];
 
 const multipliers = [1, 2, 3];
@@ -94,3 +94,7 @@ export default function createResponsiveImages(imagePath: string, className: str
     return iterate();
   }
 }
+
+
+
+

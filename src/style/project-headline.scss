@@ -35,3 +35,14 @@
     margin: 25px 2% 30px;
   }
 }
+
+div.page_the-times-pilot--image {
+  margin: 50px 0 25px;
+  @include tablet {
+    margin: 25px 0.5% 30px;
+  }
+}
+
+.times_pilot-layout-boxes {
+  fill: var(--times-pilot-layout-boxes);
+}
