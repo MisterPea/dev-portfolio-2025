@@ -6,6 +6,7 @@ import ProjectHeadline from "../../components/ProjectHeadline";
 import SectionDivider from "../../components/SectionDivider";
 import icon from '../../components/icons';
 import Footer from "../../components/Footer";
+import flowchart from "../../components/Flowchart";
 
 export function Index() {
   return (<>
@@ -119,8 +120,8 @@ export function Index() {
             headline="High-level site flow"
             bodyText="The app is divided into 3 screens and 1 large-detent sheet. User data can be stored within the device&apos;s persistent storage which would allow transferring or offloading of data to different devices. This app should also make use of Apple&apos;s Live Activities for iOS. This would allow the user to view progress from their iPhone lockscreen without explicitly opening the Circuit app."
           />
-          <figure>
-            {this.getImageLinks("times_pilot_flowchart.png", "page_times_pilot-approach-flowchart", "High-level site flow for the.times.pilot", "100vw", placeholder.projTimesPilotFlowchart)}
+          <figure className="page_times_pilot-approach-flowchart">
+            <flowchart.circuit />
           </figure>
         </article>
       </section>

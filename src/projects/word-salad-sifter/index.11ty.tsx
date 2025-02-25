@@ -6,6 +6,7 @@ import ProjectHeadline from "../../components/ProjectHeadline";
 import SectionDivider from "../../components/SectionDivider";
 import icon from '../../components/icons';
 import Footer from "../../components/Footer";
+import flowchart from "../../components/Flowchart";
 
 export function Index() {
   return (<>
@@ -72,8 +73,8 @@ export function Index() {
               "Anthropic API"
             ]}
           />
-          <figure>
-            {this.getImageLinks("word_salad_sifter-flowchart.png", "page_word-salad-sifter-approach-flowchart", "High-level app flow for Word Salad Sifter", "100vw", placeholder.projWordSaladFlowchart)}
+          <figure className="page_word-salad-sifter-approach-flowchart">
+            <flowchart.wordSaladSifter />
           </figure>
         </article>
       </section>

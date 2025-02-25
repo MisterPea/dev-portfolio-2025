@@ -1,3 +1,4 @@
+import { once } from "node:events";
 import initiateAnimateTransition from "./animateTransition";
 import { addObservers } from "./intersectionFunctions";
 /**
@@ -71,10 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
 
   addObservers('picture.lazy');
-  addObservers('figure.lazy')
+  addObservers('figure.lazy');
 
   if (mainDiv) {
-    mainDiv.classList.add("is-interactive");
+    window.setTimeout(() => {
+      mainDiv.classList.add("is-interactive");
+    }, 0, { once: true });
   }
 
   initiateAnimateTransition();

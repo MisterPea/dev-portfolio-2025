@@ -582,3 +582,19 @@ section.circuit-alternatives {
     }
   }
 }
+
+.flowchart_fill-one {
+  fill: var(--flowchart-one);
+}
+.flowchart_fill-two {
+  fill: var(--flowchart-two);
+}
+.flowchart_stroke-one {
+  stroke: var(--flowchart-one);
+}
+.flowchart_stroke-two {
+  stroke: var(--flowchart-two);
+}
+.flowchart_stroke-three {
+  stroke: var(--flowchart-three);
+}

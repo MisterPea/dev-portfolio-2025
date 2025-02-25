@@ -6,6 +6,7 @@ import ProjectHeadline from "../../components/ProjectHeadline";
 import SectionDivider from "../../components/SectionDivider";
 import icon from '../../components/icons';
 import Footer from "../../components/Footer";
+import flowchart from "../../components/Flowchart";
 
 export function Index() {
   return (<>
@@ -76,8 +77,8 @@ export function Index() {
             headline="High-level site flow"
             bodyText="It's important that users are able to get a sense of what the site has to offer without going through the signup process. Too often users are forced through a signup funnel only to find out they're not interested in the product. To allow this, the site is set up in a tiered fashion, where an unauthenticated user can still look around, but they will be unable to save articles or subscribe to email topics, as those functions require an email address."
           />
-          <figure>
-            {this.getImageLinks("times_pilot_flowchart.png", "page_times_pilot-approach-flowchart", "High-level site flow for the.times.pilot", "100vw", placeholder.projTimesPilotFlowchart)}
+          <figure className="page_times_pilot-approach-flowchart">
+            <flowchart.timesPilot />
           </figure>
         </article>
       </section>

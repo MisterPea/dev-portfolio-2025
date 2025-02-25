@@ -31,6 +31,7 @@ body {
   font-family: "Rubik", serif;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
+  position: relative;
 }
 
 h1,
@@ -54,9 +55,13 @@ a {
 .main_wrapper {
   @include progressive-width;
   opacity: 0;
-  transition: 1400ms opacity var(--ease-out-cubic);
+  transform: translate3d(0, 20px, 0);
+  transition:
+    1400ms opacity var(--ease-out-cubic),
+    1500ms transform var(--ease-out-cubic);
   &.is-interactive {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -81,11 +86,6 @@ hr {
   .hide_on_tablet {
     display: none;
   }
-}
-
-.page_word-salad-sifter-approach-flowchart,
-.page_times_pilot-approach-flowchart {
-  mix-blend-mode: difference;
 }
 
 section {
