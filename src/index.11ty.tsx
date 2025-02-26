@@ -10,7 +10,7 @@ export function Index() {
         <Header showHome={false} />
         <div className="main_wrapper">
             <h1 className="landing-headline">I&apos;m Perry, a Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
-                <span><button>Say Hello!</button></span>
+                <span><button title="Send an email" aria-label="Send email" className="render-mail">Say Hello!</button></span>
             </h1>
             <section className="landing-projects_section">
                 <SectionDivider label="Selected Works" className="landing-divider" />

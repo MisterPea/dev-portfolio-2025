@@ -1,7 +1,8 @@
 @use "./mixins.scss" as *;
 
 .project-headline-wrapper {
-  margin: 100px 2% 0;
+  margin: 0 2%;
+  padding-top: 100px;
 
   h1 {
     font-weight: 400;
@@ -14,14 +15,16 @@
     font-size: 30px;
   }
   @include tablet {
-    margin: 150px 2% 0;
+    margin: 0 2%;
+    padding-top: 150px;
     h1,
     h2 {
       font-size: 46px;
     }
   }
   @include desktop {
-    margin: 175px 2% 0;
+    margin: 0 2%;
+    padding-top: 175px;
     h1,
     h2 {
       font-size: 55px;

@@ -2,7 +2,9 @@ import "tsx/esm";
 import * as sass from "sass";
 import { renderToStaticMarkup } from "react-dom/server";
 import fs from 'node:fs';
-import path from 'node:path';
+import path, { join } from 'node:path';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 
 import createResponsiveImages from "./utils/imageProcessor";
@@ -10,6 +12,11 @@ import embedVideo from "./utils/videoProcessor";
 import { JSX } from "react";
 
 export default function (eleventyConfig: any) {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+
+
     /* 
     This block and the following .beforeWatch handle 
     the reload of layouts when components are updated
@@ -132,6 +139,25 @@ export default function (eleventyConfig: any) {
             this.addDependencies(inputPath, result.loadedUrls);
             return async (data: string) => result.css;
         },
+    });
+
+    const cssPath = join(__dirname, "src/style/inline.css");
+    let inlineCSS = "";
+    try {
+        inlineCSS = readFileSync(cssPath, "utf-8");
+    } catch (err) {
+        console.warn("⚠️ Warning: inline.css not found or couldn't be read.");
+    }
+
+    // Transform HTML output to inject the CSS inside <body>
+    eleventyConfig.addTransform("inject-inline-css", function (content, outputPath) {
+        if (outputPath && outputPath.endsWith(".html")) {
+            return content.replace(
+                /<body([^>]*)>/,
+                `<body$1>\n<style>\n${inlineCSS}\n</style>\n`
+            );
+        }
+        return content;
     });
 
     eleventyConfig.setServerOptions({

@@ -12,15 +12,15 @@ export default function InfoTextbox({ headline, bodyText, listItems, orderedItem
       <p>{bodyText}</p>
       {listItems && (
         <ul>
-          {listItems.map((item) => (
-            <li className="unordered_list_item">{item}</li>
+          {listItems.map((item,i) => (
+            <li key={`unordered-item-${i}`} className="unordered_list_item">{item}</li>
           ))}
         </ul>
       )}
       {orderedItems && (
         <ol>
-          {orderedItems.map((item) => (
-            <li className="ordered_list_item">{item}</li>
+          {orderedItems.map((item,i) => (
+            <li key={`ordered-item-${i}`} className="ordered_list_item">{item}</li>
           ))}
         </ol>
       )}

@@ -1,6 +1,6 @@
-import { once } from "node:events";
 import initiateAnimateTransition from "./animateTransition";
 import { addObservers } from "./intersectionFunctions";
+import "./renderEmail";
 /**
  * Function to look at localStorage for dark-mode preference.
  * If none is found, we check the browser.
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
   addObservers('figure.lazy');
 
   if (mainDiv) {
-    window.setTimeout(() => {
+    requestAnimationFrame(() => {
       mainDiv.classList.add("is-interactive");
-    }, 0, { once: true });
+    });
   }
 
   initiateAnimateTransition();

@@ -15,9 +15,6 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
-  background-color: var(--background-color);
-  transition: background-color 200ms linear;
-  will-change: background-color;
   scroll-behavior: smooth;
 }
 *,
@@ -89,7 +86,6 @@ hr {
 }
 
 section {
-  // background-color: rgba(193, 187, 179, 0.545);
   margin: 50px 2%;
   &:first-of-type {
     margin: 0 2%;
@@ -104,9 +100,6 @@ article {
 }
 
 @include tablet {
-  section {
-    // background-color: rgba(149, 168, 219, 0.545);
-  }
   .hide_on_mobile,
   article {
     display: grid;

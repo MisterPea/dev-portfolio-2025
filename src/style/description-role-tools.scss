@@ -1,8 +1,6 @@
 @use "./mixins.scss" as *;
 
 .project_page-desc_role_tools {
-  // background-color: darkgray;
-  // margin: 0 2%;
   @include tablet {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -81,6 +79,25 @@
       height: 24px;
       width: 24px;
     }
+  }
+}
+
+// move arrow icon on hover
+.project_page-links-icon {
+  transform: translate(0, 0);
+  transition: 400ms var(--ease-out-cubic);
+  position: relative;
+  backface-visibility: hidden;
+  & svg {
+    backface-visibility: hidden;
+  }
+}
+.project_page-links {
+  transform: translate(0, 0);
+}
+.project_page-links a:hover {
+  .project_page-links-icon {
+    transform: translate(8%, -8%);
   }
 }
 

@@ -52,8 +52,6 @@ article.landing-project_card {
       .landing-project_card-text {
         grid-column: 5 / -1;
         grid-row: 1 / -1;
-        // padding-top: 20px;
-        // padding-right: 15px;
       }
       .img-main {
         grid-column: 1 / 5;
@@ -65,13 +63,10 @@ article.landing-project_card {
       .landing-project_card-text {
         grid-column: 1 / 3;
         grid-row: 1 / -1;
-        // padding-top: 20px;
-        // padding-left: 15px;
       }
       .img-main {
         grid-column: 3 / -1;
         grid-row: 1 / -1;
-        // margin-right: 10px;
       }
     }
     &.card--one,
@@ -100,10 +95,16 @@ article.landing-project_card {
   }
 }
 
+@media (hover: hover) {
+  @include tablet {
+    .landing-project_card:hover {
+      transform: translateZ(50px);
+    }
+  }
+}
+
 section.landing-about_section {
   .about_image_wrapper {
-    // display: flex;
-    // justify-content: center;
     margin: 20px auto;
     width: 130px;
     height: 130px;

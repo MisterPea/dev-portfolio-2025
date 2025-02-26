@@ -108,9 +108,6 @@ header {
   }
 
   .svg-inner_div {
-    position: absolute;
-    inset: 0;
-
     &.light {
       transform: translateY(0px) translateZ(0);
     }
@@ -132,7 +129,12 @@ header {
           stroke-dashoffset: 9.9px;
         }
         .dark_mode_svg {
+          will-change: transform;
           transform: rotate(-24deg);
+          position: relative;
+          backface-visibility: hidden;
+          -webkit-transform-style: preserve-3d;
+          transform-style:preserve-3d;
         }
       }
     }
