@@ -1,6 +1,7 @@
 import initiateAnimateTransition from "./animateTransition";
 import { addObservers } from "./intersectionFunctions";
 import "./renderEmail";
+import "./parallax";
 /**
  * Function to look at localStorage for dark-mode preference.
  * If none is found, we check the browser.
