@@ -1,10 +1,10 @@
-/.DS_Store
-src/.DS_Store
+.DS_Store
 
 /node_modules
 
 /dist
-
 /raw_assets
-src/.DS_Store
-raw_videos/.DS_Store
+
+.env
+spotify_lambda/node_modules
+spotify_lambda/function.zip

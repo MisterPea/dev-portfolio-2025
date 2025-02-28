@@ -1,0 +1,22 @@
+{
+  "name": "spotify_lambda",
+  "version": "1.0.0",
+  "description": "Implementation utilizing Lambda and DynamoDB to grab/store current song(s) from Spotify",
+  "keywords": [
+    "Spotify",
+    "Lambda",
+    "DynamoDB"
+  ],
+  "license": "MIT",
+  "author": "Perry Angelora",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.751.0",
+    "@aws-sdk/client-lambda": "^3.750.0",
+    "axios": "^1.8.1"
+  }
+}
