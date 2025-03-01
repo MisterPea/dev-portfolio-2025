@@ -16,7 +16,7 @@ export function Index() {
                 <SectionDivider label="Selected Works" className="landing-divider" />
                 <LandingProject
                     images={this.getImageLinks("word_salad_sifter_hero.png", "project_hero", "partial screen view of the Word Salad Sifter extension.", "100vw", placeholder.projWordSalad)}
-                    title="Word Salad Sifter: Uncovering the important parts of job postings."
+                    title="Word Salad Sifter: Uncovering the Important Parts of Job Postings"
                     description="A Chrome Extension that gives users the power to uncover the important facets of job postings."
                     imageAlignment="one"
                     link="/projects/word-salad-sifter"
@@ -42,14 +42,19 @@ export function Index() {
                     <div className="about_image_wrapper">
                         <AboutImage />
                     </div>
-                    <p className="about_text">
-                        I&apos;m a multi-disciplinary developer and designer with multiple-years of experience based in New York City. With a foundation in advertising design and a focus on front-end development, I specialize in creating uncomplicated, user-focused experiences.<br /><br />
-                        Outside of work, I enjoy drawing, playing the piano, and being an inquisitive musicophile.<br /><br />
-                        If you&apos;re curious about my aural explorations, I&apos;m currently listening to: <span className="about-spotify_inline">Die Explosion im Festspielhaus</span> by <span className="about-spotify_inline">Einstürzende Neubauten</span> on Spotify.
+                    <p className="about_text">I&apos;m a multi-disciplinary maker based in New York City, with multiple-years of experience in designing, developing, building, and troubleshooting things. With a foundation in advertising design and a focus on front-end development, I specialize in creating uncomplicated, user-focused experiences.<br /><br />
+                        Beyond that, I enjoy drawing, playing the piano, and being an inquisitive musicophile.
+                        <br /><br />
+                        <span className="spotify-data"></span>
                     </p>
                     <section className="colophon">
                         <p className="about-colophon-header">Colophon:</p>
-                        <p className="about-colophon-text">Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and <a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a> to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.</p>
+                        <p className="about-colophon-text">
+                            Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and
+                            {" "}<a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a>
+                            {" "}to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.
+                            Check out the repo for this site <a href="https://github.com/MisterPea/dev-portfolio-2025" rel="noreferrer" target="_blank">here</a>.
+                        </p>
                     </section>
                 </div>
             </section>

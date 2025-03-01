@@ -2,6 +2,7 @@ import initiateAnimateTransition from "./animateTransition";
 import { addObservers } from "./intersectionFunctions";
 import "./renderEmail";
 import "./parallax";
+import spotifyListening from "./spotifyListening";
 /**
  * Function to look at localStorage for dark-mode preference.
  * If none is found, we check the browser.
@@ -56,7 +57,6 @@ export function toggleDarkMode() {
 /**
  * Everything kicks off from here - Called when DOM content is ready.
  */
-
 document.addEventListener('DOMContentLoaded', () => {
   const prefersDarkMode = _getDarkModePref();
   const sunMoon = document.querySelector('.svg-inner_div') as HTMLDivElement;
@@ -75,12 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
   addObservers('picture.lazy');
   addObservers('figure.lazy');
 
+  // We want to wait two paint cycles to let our classes set
   if (mainDiv) {
     requestAnimationFrame(() => {
-      mainDiv.classList.add("is-interactive");
+      requestAnimationFrame(() => {
+        mainDiv.classList.add("is-interactive");
+      });
     });
   }
 
   initiateAnimateTransition();
-
+  spotifyListening();
 });

@@ -1,7 +1,5 @@
 /*
 This prevents flash of unstyled screen on safari
-Placing the color on html, although unconventional,
-helps for mix-blend-mode to work on ms edge
 */
 html body {
   transition: background-color 300ms linear;

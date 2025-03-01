@@ -4,24 +4,6 @@ $tablet: 767px;
 $desktop: 1024px;
 $desktop-lg: 1350px;
 
-// @mixin hi-dpi-mobile {
-//   @media only screen and (min-resolution: 192dpi) and (max-width: 767px) and (max-device-width: 767px) {
-//     @content;
-//   }
-// }
-
-// @mixin tablet-and-above {
-//   @media only screen and (min-width: #{$mobile-vert}) {
-//     @content;
-//   }
-// }
-
-// @mixin tablet-begin {
-//   @media only screen and (min-width: #{$tablet-begin}) {
-//     @content;
-//   }
-// }
-
 @mixin tablet {
   @media screen and (min-width: #{$tablet}) {
     @content;
@@ -70,17 +52,17 @@ $desktop-lg: 1350px;
 }
 
 .fade-out {
-  animation: fadeOutPage 500ms var(--easing-expo) forwards;
+  animation: fadeOutPage 800ms var(--ease-in-out-expo) forwards;
 }
 
 @keyframes fadeOutPage {
   0% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 50px, 0);
   }
 }
 

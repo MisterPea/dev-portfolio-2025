@@ -155,8 +155,9 @@ section.landing-about_section {
   letter-spacing: 0.3px;
 }
 
-.about-spotify_inline {
+.about-spotify_inline a {
   color: var(--text-accent-one);
+  text-decoration: underline;
 }
 section.colophon:first-of-type {
   grid-column: 1 / 4;
@@ -243,5 +244,19 @@ section.colophon:first-of-type {
       grid-column: 1 / 4;
       grid-row: 3 / 4;
     }
+  }
+}
+
+.spotify-data {
+  opacity: 0;
+  display: block;
+  animation: fadeInSpotify 400ms ease forwards;
+}
+@keyframes fadeInSpotify {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

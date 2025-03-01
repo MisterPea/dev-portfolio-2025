@@ -2,7 +2,7 @@ interface InfoTextboxProps {
   headline: string;
   bodyText: string | any;
   listItems?: string[];
-  orderedItems?: string[];
+  orderedItems?: string[] | any[];
   className?: string;
 }
 export default function InfoTextbox({ headline, bodyText, listItems, orderedItems, className }: InfoTextboxProps) {
@@ -12,14 +12,14 @@ export default function InfoTextbox({ headline, bodyText, listItems, orderedItem
       <p>{bodyText}</p>
       {listItems && (
         <ul>
-          {listItems.map((item,i) => (
+          {listItems.map((item, i) => (
             <li key={`unordered-item-${i}`} className="unordered_list_item">{item}</li>
           ))}
         </ul>
       )}
       {orderedItems && (
         <ol>
-          {orderedItems.map((item,i) => (
+          {orderedItems.map((item, i) => (
             <li key={`ordered-item-${i}`} className="ordered_list_item">{item}</li>
           ))}
         </ol>

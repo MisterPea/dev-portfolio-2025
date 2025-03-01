@@ -56,6 +56,11 @@
     padding-right: 8px;
     border: 1px solid var(--proj-button-border);
     border-radius: 30px;
+    will-change: transform;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style:preserve-3d;
     p {
       height: fit-content;
       text-align: center;

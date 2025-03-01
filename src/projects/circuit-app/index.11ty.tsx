@@ -4,9 +4,8 @@ import InfoTextbox from "../../components/InfoTextbox";
 import { placeholder } from "../../components/placeholder";
 import ProjectHeadline from "../../components/ProjectHeadline";
 import SectionDivider from "../../components/SectionDivider";
-import icon from '../../components/icons';
 import Footer from "../../components/Footer";
-import flowchart from "../../components/Flowchart";
+import flowchart from "../../components/flowchart";
 
 export function Index() {
   return (<>
@@ -19,7 +18,7 @@ export function Index() {
         className="page_circuit-app"
       />
       <DescriptionRoleTools
-        description="Circuit App is designed to address the core tension in creative work: maintaining deep focus, while preventing burnout. By smartly structuring periods of work and breaks, creative professionals can sustain their productivity and well-being."
+        description={<><span>Circuit App</span> is designed to address the core tension in creative work: maintaining deep focus, while preventing burnout. By smartly structuring periods of work and breaks, creative professionals can sustain their productivity and well-being.</>}
         links={[
           { label: "Figma Prototype", url: "https://www.figma.com/proto/qbEmJWDw0g55I12bji05AB/Circuit-revisit?type=design&node-id=104-257&t=d5oqzpqqskE6aos1-1&scaling=min-zoom&page-id=86%3A194&starting-point-node-id=90%3A206&show-proto-sidebar=1" },
           { label: "Figma Layout", url: "https://www.figma.com/file/qbEmJWDw0g55I12bji05AB/Circuit-revisit?type=design&node-id=86%3A194&mode=design&t=vRf3qiONLpSwo8ba-1" },
@@ -32,7 +31,7 @@ export function Index() {
         <SectionDivider label="The Challenge" className="project_space-one" />
         <article className="project-section-problem-article full-width">
           <InfoTextbox
-            headline="Flow And Distraction"
+            headline="Flow and Distraction"
             bodyText="Creative professionals continually face the paradox of maintaining creative flow and focus, while contending with the distractions of hyper-connectivity. This fact is compounded by a tendency to overwork to the point of mental and physical exhaustion."
           />
         </article>
@@ -65,7 +64,7 @@ export function Index() {
         <article className="project-section-approach-article right-image section-proposal">
           <InfoTextbox
             headline="Structured, Intuitive Feedback"
-            bodyText="With a matrix of circles, we are able visually structure time, so in a glance the user is able to see roughly how far along they are in the current timer/period. This allays anxiety associated with working or resting too long. This matrix configuration also allows the user to have a timing scheme for up to 8 hours, which is the current limit of Apple's Live Activities for iOS."
+            bodyText="With a matrix of circles, time is able to be visibly structured. In a glance, users can gauge how far along they are in the current timer/period. This allays anxiety associated with working or resting too long. This matrix configuration also allows the user to create a timing scheme for up to 8 hours, which is the current limit of Apple's Live Activities for iOS."
           />
           <figure className="circuit_proposition-activities">
             <p>Semantically colored circles identify the current activity status (Each circle represents one minute).</p>
@@ -117,7 +116,7 @@ export function Index() {
         </article>
         <article className="project-section-approach-article hide_on_mobile three-width-full-img">
           <InfoTextbox
-            headline="High-level site flow"
+            headline="High-Level Site Flow"
             bodyText="The app is divided into 3 screens and 1 large-detent sheet. User data can be stored within the device&apos;s persistent storage which would allow transferring or offloading of data to different devices. This app should also make use of Apple&apos;s Live Activities for iOS. This would allow the user to view progress from their iPhone lockscreen without explicitly opening the Circuit app."
           />
           <figure className="page_times_pilot-approach-flowchart">

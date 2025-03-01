@@ -176,7 +176,7 @@
   .circuit-design_consideration_diagram-one {
     grid-column: 1 / 7;
     h4 {
-      grid-column: 3 / 7;
+      grid-column: 3 / -1;
     }
     .line-group-one {
       grid-column: 1 / 5;
@@ -275,10 +275,10 @@
   .circuit-design_consideration_diagram-one {
     grid-column: 1 / 6;
     grid-template-columns: repeat(5, 1fr);
-    margin-right: -20px;
+    // margin-right: -20px;
     margin-top: 0;
     picture {
-      grid-column: 3 / 6;
+      grid-column: 3 / -1;
     }
     .line-group-one {
       width: 60%;
@@ -298,7 +298,7 @@
     grid-row: auto auto auto;
     grid-column: 6 / 9;
     margin-top: 0;
-    gap: 0;
+    // gap: 2;
     h4 {
       grid-row: 1 / 2;
     }

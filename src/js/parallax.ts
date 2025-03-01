@@ -15,9 +15,12 @@ function handleHover(e: MouseEvent, card: HTMLElement) {
   const vertical = (clientY - offsetTop) / clientHeight;
   const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
   const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
-  console.log("HOZ:", (horizontal * 20) - 10, "VER:", vertical);
-  card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
-  card.style.boxShadow = `rgba(0, 0, 0, 0.1) ${mapLogarithmic(horizontal)}px ${mapLogarithmic(vertical)}px 10px,rgba(0, 0, 0, 0.2) ${mapLogarithmic(horizontal, 2)}px ${mapLogarithmic(vertical, 2)}px 2px`;
+  if (clientWidth > 717) {
+    card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+    card.style.boxShadow = `rgba(0, 0, 0, 0.1) ${mapLogarithmic(horizontal)}px ${mapLogarithmic(vertical)}px 10px,rgba(0, 0, 0, 0.2) ${mapLogarithmic(horizontal, 2)}px ${mapLogarithmic(vertical, 2)}px 2px`;
+  } else {
+    resetStyle(e, card);
+  }
 }
 
 function resetStyle(e: MouseEvent, card: HTMLElement) {

@@ -22,7 +22,7 @@ export default function DescriptionRoleTools({ description, links, tools, roles,
           <p className="project_page-description">{description}</p>
           <div className="project_page-links">
             {links.map(({ label, url }) => (
-              <a key={url} href={url}>
+              <a key={url} href={url} title={`Visit ${label} in a new window`} rel="noreferrer" target="_blank">
                 <div className="project_page-links-label">
                   <p>{label}</p>
                   <div className='project_page-links-icon'>

@@ -53,18 +53,20 @@ header {
   .header-buttons_holder {
     display: flex;
     gap: 10px;
-    padding-right: 2%;
+    padding-right: 1%;
   }
 
   .header_button {
     background: none;
     border: none;
     height: 40px;
-    width: 40px;
+    padding: 0;
+    width: 40px; // removed for mobile
     overflow: hidden;
     position: relative;
     cursor: pointer;
     z-index: 1;
+
   }
 
   .svg_wrapper {
@@ -108,6 +110,7 @@ header {
   }
 
   .svg-inner_div {
+
     &.light {
       transform: translateY(0px) translateZ(0);
     }

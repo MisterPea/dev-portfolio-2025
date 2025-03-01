@@ -52,10 +52,10 @@ a {
 .main_wrapper {
   @include progressive-width;
   opacity: 0;
-  transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, -20px, 0);
   transition:
-    1400ms opacity var(--ease-out-cubic),
-    1500ms transform var(--ease-out-cubic);
+    600ms opacity var(--ease-out-cubic),
+    600ms transform var(--ease-out-cubic);
   &.is-interactive {
     opacity: 1;
     transform: translate3d(0, 0, 0);
