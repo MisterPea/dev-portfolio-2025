@@ -33,14 +33,14 @@ async function getToken() {
   const authData = await getStoredAuth();
 
   if (authData && authData.auth_token && authData.token_expiration > Math.floor(Date.now())) {
-    console.log("Using cached token");
+    // console.log("Using cached token");
     return { token: authData.auth_token };
   }
   if (authData && authData.refresh_token) {
-    console.log("Refreshing token...");
+    // console.log("Refreshing token...");
     return await refreshSpotifyToken(authData.refresh_token);
   } else {
-    console.log("No refresh token found. Need to authenticate manually.");
+    // console.log("No refresh token found. Need to authenticate manually.");
     return { error: "No refresh token. Please authenticate manually and add it to your DynamoDB manually, you big lug." };
   }
 }
@@ -56,7 +56,7 @@ async function getStoredAuth() {
   const result = await dynamoClient.send(command);
 
   if (!result.Item) {
-    console.log("No authentication data found in DynamoDB.");
+    // console.log("No authentication data found in DynamoDB.");
     return null;
   }
 
@@ -91,7 +91,7 @@ async function refreshSpotifyToken(refreshToken) {
 
     return { token: newAuthToken };
   } catch (error) {
-    console.error("Failed to refresh token", error.response?.data || error);
+    // console.error("Failed to refresh token", error.response?.data || error);
     return { error: "Failed to refresh token" };
   }
 }
@@ -111,5 +111,5 @@ async function updateStoredAuth(authToken, refreshToken, expiration) {
   const command = new PutItemCommand(params);
   await dynamoClient.send(command);
 
-  console.log("Stored new token data in DynamoDB");
+  // console.log("Stored new token data in DynamoDB");
 }

@@ -10,8 +10,8 @@ import flowchart from "../../components/flowchart";
 
 export function Index() {
   return (<>
-    <Header showHome={true} />
-    <div className="main_wrapper">
+    <Header />
+    <div className="main_wrapper" data-barba="container" data-barba-namespace="fade">
       <ProjectHeadline
         headline="the.times.pilot"
         subHeadline="Tailoring Your NY Times Digest"

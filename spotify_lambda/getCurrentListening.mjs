@@ -28,7 +28,7 @@ export async function getStoredSong() {
 
 // If we are here, stored song is stale - fetch and update
 export async function fetchCurrentlyPlaying(authToken) {
-  console.log("Attempting to fetch currently playing song");
+  // console.log("Attempting to fetch currently playing song");
   try {
     const currentPlayResponse = await axios.get(currentlyPlayingEndpoint, {
       headers: {
@@ -55,7 +55,7 @@ export async function fetchCurrentlyPlaying(authToken) {
       const result = await dynamoClient.send(command);
       return { track: name, artist: album.artists[0].name, album: album.name, url: external_urls.spotify }
     } else {
-      console.log("No song currently playing, fetching last song");
+      // console.log("No song currently playing, fetching last song");
       const pastPlayResponse = await axios.get(playHistoryEndpoint, {
         headers: {
           "Authorization": `Bearer ${authToken}`

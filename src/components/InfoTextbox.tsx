@@ -8,7 +8,7 @@ interface InfoTextboxProps {
 export default function InfoTextbox({ headline, bodyText, listItems, orderedItems, className }: InfoTextboxProps) {
   return (
     <div className={`project-info_textbox${className ? " " + className : ""}`}>
-      <h4>{headline}</h4>
+      <h3>{headline}</h3>
       <p>{bodyText}</p>
       {listItems && (
         <ul>

@@ -1,24 +1,49 @@
-/* rubik-300 - latin */
 @font-face {
   font-display: swap;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 300;
-  src: url("/assets/fonts/rubik-v28-latin-300.woff2") format("woff2");
+  font-family: "BDO Grotesk Black";
+  font-size: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/BDOGrotesk-Black.woff2");
 }
-/* rubik-regular - latin */
 @font-face {
   font-display: swap;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/assets/fonts/rubik-v28-latin-regular.woff2") format("woff2");
+  font-family: "BDO Grotesk Extra Bold";
+  font-size: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/BDOGrotesk-ExtraBold.woff2");
 }
-/* rubik-500 - latin */
 @font-face {
   font-display: swap;
-  font-family: "Rubik";
-  font-style: normal;
+  font-family: "BDO Grotesk Bold";
+  font-size: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/BDOGrotesk-Bold.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "BDO Grotesk Demi Bold";
+  font-size: normal;
   font-weight: 500;
-  src: url("/assets/fonts/rubik-v28-latin-500.woff2") format("woff2");
+  src: url("/assets/fonts/BDOGrotesk-DemiBold.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "BDO Grotesk Medium";
+  font-size: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/BDOGrotesk-Medium.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "BDO Grotesk Regular";
+  font-size: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/BDOGrotesk-Regular.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "BDO Grotesk Light";
+  font-size: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/BDOGrotesk-Light.woff2");
 }

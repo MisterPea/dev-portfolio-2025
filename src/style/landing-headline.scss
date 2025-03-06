@@ -5,10 +5,10 @@
 
 .landing-headline,
 .landing-headline button {
-  padding: 120px 0 100px;
+  @include font-bdo-grotesk-demi-bold;
+  padding: 120px 0;
   color: var(--text-color);
-  font-family: Rubik;
-  font-size: 27px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 300;
   line-height: 130%;
@@ -18,12 +18,13 @@
   
   @include tablet {
     padding: 140px 0 130px;
-    font-size: 55px;
+    font-size: 3.5rem;
     letter-spacing: 0;
     line-height: 120%;
   }
   @include desktop {
-    font-size: 70px;
+    font-size: 4rem;
+    // font-size: 70px;
     padding: 150px 0;
   }
 

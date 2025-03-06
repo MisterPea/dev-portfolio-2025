@@ -11,18 +11,18 @@
 
 .project_page {
   &-description {
+    @include font-bdo-grotesk-light;
     color: var(--text-color);
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 1rem;
     line-height: 140%;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.05em;
     margin-bottom: 20px;
     @include tablet {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
     @include desktop {
-      font-size: 24px;
-      letter-spacing: 0.38px;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
     }
   }
 }
@@ -45,6 +45,8 @@
   gap: 25px;
 
   &-label {
+    @include font-bdo-grotesk-light;
+    letter-spacing: 0.05em;
     display: flex;
     font-size: 15px;
     font-weight: 300;
@@ -60,7 +62,7 @@
     position: relative;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-    transform-style:preserve-3d;
+    transform-style: preserve-3d;
     p {
       height: fit-content;
       text-align: center;
@@ -109,16 +111,18 @@
 // tools and roles
 .project_page-tools_roles {
   h3 {
-    color: #808080;
+    @include font-bdo-grotesk-demi-bold;
+    color: var(--desc-tools-title);
     font-size: 14px;
     font-weight: 500;
   }
   p {
+    @include font-bdo-grotesk-light;
     color: var(--text-color);
     font-size: 16px;
     font-weight: 300;
     line-height: 140%;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.05em;
   }
   @include tablet {
     line-height: 140%;

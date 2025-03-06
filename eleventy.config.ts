@@ -97,9 +97,10 @@ export default function (eleventyConfig: any) {
                         <meta name="description" content="Perry's Portfolio - Developer / Designer / Technologist">
                         <meta name="google" content="nositelinkssearchbox">
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-                        <link rel="preload" href="/assets/fonts/rubik-v28-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/BDOGrotesk-DemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
                         <link rel="preload" href="/style/main.css" as="style">
                         <link rel="stylesheet" href="/style/fonts.css">
                         <link rel="stylesheet" href="/style/variables.css">
@@ -116,7 +117,7 @@ export default function (eleventyConfig: any) {
                         </script>
                         <script src="/js/main.js" defer></script>
                     </head>
-                    <body>
+                    <body data-barba="wrapper">
                     ${result}
                     </body>
                 </html>`;

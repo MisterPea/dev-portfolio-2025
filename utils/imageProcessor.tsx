@@ -52,7 +52,7 @@ export default function createResponsiveImages(imagePath: string, className: str
         {breakpoints.map((breakpoint, i) => (
           <source key={i} sizes={sizes} data-srcset={images[i].join(", ")} media={`(min-width: ${breakpoint.width}px)`} />
         ))}
-        <img className="img-tag" src={null} data-src={images[0][0].split(" ")[0]} data-alt={alt} data-width={`${width}`} data-height={`${height}`} />
+        <img className="img-tag" src={null} data-src={images[0][0].split(" ")[0]} alt={alt} data-width={`${width}`} data-height={`${height}`} />
         {Placeholder && <div className="placeholder"><Placeholder /></div>}
       </picture>
     );
