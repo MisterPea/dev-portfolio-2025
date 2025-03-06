@@ -8,8 +8,8 @@ import SectionDivider from "./components/SectionDivider.tsx";
 export function Index() {
     return (<>
         <Header showHome={false} />
-        <div className="main_wrapper">
-            <h1 className="landing-headline">I&apos;m Perry, a Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
+        <div className="main_wrapper" data-barba="container" data-barba-namespace="fade">
+            <h1 className="landing-headline">I&apos;m Perry, Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
                 <span><button title="Send an email" aria-label="Send email" className="render-mail">Say Hello!</button></span>
             </h1>
             <section className="landing-projects_section">
@@ -51,9 +51,9 @@ export function Index() {
                         <p className="about-colophon-header">Colophon:</p>
                         <p className="about-colophon-text">
                             Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and
-                            {" "}<a href="https://www.11ty.dev" rel="noreferrer" target="_blank">11ty</a>
-                            {" "}to pull it all together. Typography is set in the <a href="https://fonts.google.com/specimen/Rubik" rel="noreferrer" target="_blank">Rubik</a> typeface.
-                            Check out the repo for this site <a href="https://github.com/MisterPea/dev-portfolio-2025" rel="noreferrer" target="_blank">here</a>.
+                            {" "}<a href="https://www.11ty.dev" rel="noreferrer" target="_blank" title="Visit 11ty.dev">11ty</a>
+                            {" "}to pull it all together. Typography is set in the <a href="https://lokalcontainer.com/LCT-BDO-Grotesk-Test-Area" rel="noreferrer" target="_blank" title="Visit the Lokal Container Tipografi site">LCT BDO Grotesk</a> typeface.&nbsp;
+                            Check out the <a href="https://github.com/MisterPea/dev-portfolio-2025" rel="noreferrer" target="_blank" title="Visit the GitHub repo for this project">repo for this site</a>.
                         </p>
                     </section>
                 </div>

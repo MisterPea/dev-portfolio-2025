@@ -28,8 +28,11 @@ function resetStyle(e: MouseEvent, card: HTMLElement) {
   card.style.boxShadow = `rgba(0, 0, 3, 0.0) 0px 0px 0px,rgba(0, 0, 3, 0.0) 0px 0px 0px`;
 }
 
-const cards = document.querySelectorAll('article.landing-project_card');
-cards.forEach((card: HTMLElement) => {
-  card.addEventListener('mousemove', (e: MouseEvent) => handleHover(e, card));
-  card.addEventListener('mouseleave', (e) => resetStyle(e, card));
-});
+export default function initParallax() {
+  const cards = document.querySelectorAll('article.landing-project_card');
+  cards.forEach((card: HTMLElement) => {
+    card.addEventListener('mousemove', (e: MouseEvent) => handleHover(e, card));
+    card.addEventListener('mouseleave', (e) => resetStyle(e, card));
+  });
+}
+

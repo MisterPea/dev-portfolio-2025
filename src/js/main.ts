@@ -1,8 +1,35 @@
-import initiateAnimateTransition from "./animateTransition";
 import { addObservers } from "./intersectionFunctions";
 import "./renderEmail";
-import "./parallax";
+import initParallax from "./parallax";
 import spotifyListening from "./spotifyListening";
+import barba from "@barba/core";
+import barbaCss from "@barba/css";
+
+interface BarbaUrl {
+  href: string;
+  path: string;
+  port?: number;
+  query: Record<string, any>;
+}
+
+interface BarbaPage {
+  container: HTMLElement;
+  html: string;
+  namespace: string;
+  url: BarbaUrl;
+}
+
+interface BarbaEvent {
+  isTrusted: boolean;
+}
+
+interface BarbaTransitionEvent {
+  current: BarbaPage;
+  event: BarbaEvent;
+  next: BarbaPage;
+  trigger: unknown;
+}
+
 /**
  * Function to look at localStorage for dark-mode preference.
  * If none is found, we check the browser.
@@ -26,7 +53,6 @@ function _getDarkModePref(): 'dark' | 'light' {
   const html = document.querySelector('html');
   html.setAttribute('data-color-scheme', prefersDarkMode);
   head.appendChild(meta);
-
   return prefersDarkMode;
 }
 
@@ -54,9 +80,52 @@ export function toggleDarkMode() {
   }
 }
 
+function initPageListeners(data: BarbaTransitionEvent) {
+  const homeBtn = document.querySelector('.home-button');
+  const currPath = data.next.url.path;
+
+  addObservers('picture.lazy');
+  addObservers('figure.lazy');
+  initParallax();
+  if (currPath === '/') {
+    // only load spotify on root & add 
+    spotifyListening();
+    homeBtn.classList.remove('enabled');
+    if (!homeBtn.classList.contains('disabled')) homeBtn.classList.add('disabled');
+  } else {
+    // show home button if not root 
+    homeBtn.classList.remove('disabled');
+    if (!homeBtn.classList.contains('enabled')) homeBtn.classList.add('enabled');
+  }
+}
+
+barba.use(barbaCss);
+barba.init({
+  views: [{
+    namespace: 'fade',
+    beforeEnter(e: BarbaTransitionEvent) {
+      initPageListeners(e);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }],
+  transitions: [
+    {
+      name: 'fade',
+      to: {
+        namespace: ['fade']
+      },
+      leave() { },
+      enter() { },
+    }
+  ]
+});
+
+
+
 /**
  * Everything kicks off from here - Called when DOM content is ready.
  */
+// window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const prefersDarkMode = _getDarkModePref();
   const sunMoon = document.querySelector('.svg-inner_div') as HTMLDivElement;
@@ -72,18 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightDarkToggleBtn = document.querySelector('.dark_mode-button');
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
 
-  addObservers('picture.lazy');
-  addObservers('figure.lazy');
+
 
   // We want to wait two paint cycles to let our classes set
-  if (mainDiv) {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        mainDiv.classList.add("is-interactive");
-      });
-    });
-  }
+  // if (mainDiv) {
+  //   requestAnimationFrame(() => {
+  //     requestAnimationFrame(() => {
+  //       mainDiv.classList.add("is-interactive");
+  //     });
+  //   });
+  // }
 
-  initiateAnimateTransition();
-  spotifyListening();
+  // initiateAnimateTransition();
+
 });

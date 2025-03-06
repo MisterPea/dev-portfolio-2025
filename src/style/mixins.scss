@@ -1,5 +1,3 @@
-// $mobile-vert: 600px;
-// $tablet-begin: 767px;
 $tablet: 767px;
 $desktop: 1024px;
 $desktop-lg: 1350px;
@@ -51,26 +49,51 @@ $desktop-lg: 1350px;
   margin: 0 2%;
 }
 
-.fade-out {
-  animation: fadeOutPage 800ms var(--ease-in-out-expo) forwards;
+// Mixin for BDO Grotesk Black
+@mixin font-bdo-grotesk-black {
+  font-family: "BDO Grotesk Black";
+  font-weight: 900;
+  font-display: swap;
 }
 
-@keyframes fadeOutPage {
-  0% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 50px, 0);
-  }
+// Mixin for BDO Grotesk Extra Bold
+@mixin font-bdo-grotesk-extra-bold {
+  font-family: "BDO Grotesk Extra Bold";
+  font-weight: 800;
+  font-display: swap;
 }
 
-// @keyframes fadeInPage {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
+// Mixin for BDO Grotesk Bold
+@mixin font-bdo-grotesk-bold {
+  font-family: "BDO Grotesk Bold";
+  font-weight: 700;
+  font-display: swap;
+}
+
+// Mixin for BDO Grotesk Demi Bold
+@mixin font-bdo-grotesk-demi-bold {
+  font-family: "BDO Grotesk Demi Bold";
+  font-weight: 500;
+  font-display: swap;
+}
+
+// Mixin for BDO Grotesk Medium
+@mixin font-bdo-grotesk-medium {
+  font-family: "BDO Grotesk Medium";
+  font-weight: 500;
+  font-display: swap;
+}
+
+// Mixin for BDO Grotesk Regular
+@mixin font-bdo-grotesk-regular {
+  font-family: "BDO Grotesk Regular";
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Mixin for BDO Grotesk Light
+@mixin font-bdo-grotesk-light {
+  font-family: "BDO Grotesk Light";
+  font-weight: 300;
+  font-display: swap;
+}

@@ -12,6 +12,40 @@
 @use "footer.scss" as *;
 @use "mixins.scss" as *;
 
+/* Leaving Page */
+.main_wrapper.fade-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main_wrapper.fade-leave-active {
+  transition:
+  opacity 600ms var(--ease-out-cubic) 100ms,
+  transform 700ms var(--ease-in-out-expo);
+}
+
+.main_wrapper.fade-leave-to {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+/* Entering Page */
+.main_wrapper.fade-enter {
+  opacity: 0;
+  transform: translateY(-80px);
+}
+
+.main_wrapper.fade-enter-active {
+  transition:
+    opacity 500ms var(--easing-expo),
+    transform 600ms var(--easing-expo);
+}
+
+.main_wrapper.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -25,7 +59,6 @@ html {
 
 body {
   margin: 0;
-  font-family: "Rubik", serif;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   position: relative;
@@ -45,21 +78,13 @@ button {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   color: var(--text-color);
 }
 
 .main_wrapper {
   @include progressive-width;
-  opacity: 0;
-  transform: translate3d(0, -20px, 0);
-  transition:
-    600ms opacity var(--ease-out-cubic),
-    600ms transform var(--ease-out-cubic);
-  &.is-interactive {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 hr {

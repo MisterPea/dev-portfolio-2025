@@ -43,11 +43,11 @@ function applyImageIntersection(target: HTMLPictureElement) {
   });
 
   const dataSrc = imgElement.getAttribute('data-src');
-  const dataAlt = imgElement.getAttribute('data-alt');
+  // const dataAlt = imgElement.getAttribute('data-alt');
   const dataHeight = imgElement.getAttribute('data-height');
   const dataWidth = imgElement.getAttribute('data-width');
 
-  if (dataSrc && dataAlt && dataHeight && dataWidth) {
+  if (dataSrc && dataHeight && dataWidth) {
     // Initiate adding of the image to the DOM
     imgElement.addEventListener('load', () => {
       placeholder.style.opacity = '0';
@@ -55,12 +55,12 @@ function applyImageIntersection(target: HTMLPictureElement) {
     }, { 'once': true });
 
     imgElement.setAttribute('src', dataSrc);
-    imgElement.setAttribute('alt', dataAlt);
+    // imgElement.setAttribute('alt', dataAlt);
     imgElement.setAttribute('height', dataHeight);
     imgElement.setAttribute('width', dataWidth);
 
     imgElement.removeAttribute('data-src');
-    imgElement.removeAttribute('data-alt');
+    // imgElement.removeAttribute('data-alt');
     imgElement.removeAttribute('data-height');
     imgElement.removeAttribute('data-width');
   }

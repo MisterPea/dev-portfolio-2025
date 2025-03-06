@@ -9,8 +9,8 @@
   color: var(--text-color);
   margin-top: 60px;
   h4 {
+    @include font-bdo-grotesk-demi-bold;
     text-align: center;
-    font-weight: 400;
     grid-row: 1 / 2;
     margin-bottom: 10px;
   }
@@ -28,11 +28,11 @@
     z-index: 1;
     grid-row: 2 / -1;
     p {
+      @include font-bdo-grotesk-light;
       display: inline;
-      font-size: 13px;
-      font-weight: 300;
+      font-size: 0.825rem;
       line-height: 130%;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.05em;
     }
   }
   picture {
