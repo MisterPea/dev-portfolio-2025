@@ -7,8 +7,8 @@ import SectionDivider from "./components/SectionDivider.tsx";
 
 export function Index() {
     return (<>
-        <Header showHome={false} />
-        <div className="main_wrapper" data-barba="container" data-barba-namespace="fade">
+        <Header />
+        <div className="main_wrapper-home" data-barba="container" data-barba-namespace="home">
             <h1 className="landing-headline">I&apos;m Perry, Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
                 <span><button title="Send an email" aria-label="Send email" className="render-mail">Say Hello!</button></span>
             </h1>

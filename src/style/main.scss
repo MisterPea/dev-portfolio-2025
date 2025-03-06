@@ -12,40 +12,84 @@
 @use "footer.scss" as *;
 @use "mixins.scss" as *;
 
-/* Leaving Page */
-.main_wrapper.fade-leave {
+.initial-once-active {
+  transition: opacity 1600ms ease 300ms;
+}
+
+.initial-once-to {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.main_wrapper.fade-leave-active {
-  transition:
-  opacity 600ms var(--ease-out-cubic) 100ms,
-  transform 700ms var(--ease-in-out-expo);
-}
-
-.main_wrapper.fade-leave-to {
+.initial-once {
   opacity: 0;
-  transform: translateY(100px);
 }
 
-/* Entering Page */
-.main_wrapper.fade-enter {
+// page animations
+.home-leave-active,
+.project-leave-active {
+  transition: all 600ms var(--ease-in-out-cubic);
+}
+
+.home-leave-to,
+.project-leave-to {
   opacity: 0;
-  transform: translateY(-80px);
+}
+.home-leave-to {
+  transform: translate3d(0, -100px, 0);
+}
+.project-leave-to {
+  transform: translate3d(0, 100px, 0);
 }
 
-.main_wrapper.fade-enter-active {
-  transition:
-    opacity 500ms var(--easing-expo),
-    transform 600ms var(--easing-expo);
-}
-
-.main_wrapper.fade-enter-to {
+.home-leave,
+.project-leave {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+}
+.home-enter-active,
+.project-enter-active {
+  transition: all 600ms var(--ease-out-cubic) 100ms;
 }
 
+.home-enter-to,
+.project-enter-to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.home-enter,
+.project-enter {
+  opacity: 0;
+}
+
+.home-enter {
+  transform: translate3d(0, 180px, 0);
+}
+
+.project-enter {
+  transform: translate3d(0, -180px, 0);
+}
+
+// .main_wrapper
+
+// /* Entering Page */
+// .main_wrapper.fade-leave-to,
+// .main_wrapper.fade-enter {
+//   opacity: 0;
+//   transform: translate3d(0, -80px, 0);
+// }
+
+// .main_wrapper.fade-enter-active {
+//   transition:
+//     opacity 500ms var(--easing-expo) 500ms,
+//     transform 1000ms var(--easing-expo) 500ms;
+// }
+
+// .main_wrapper.fade-leave,
+// .main_wrapper.fade-enter-to {
+//   opacity: 1;
+//   transform: translate3d(0, 0, 0);
+// }
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -83,7 +127,7 @@ a {
   color: var(--text-color);
 }
 
-.main_wrapper {
+div[class^="main_wrapper"] {
   @include progressive-width;
 }
 

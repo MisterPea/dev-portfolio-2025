@@ -83,7 +83,6 @@ export function toggleDarkMode() {
 function initPageListeners(data: BarbaTransitionEvent) {
   const homeBtn = document.querySelector('.home-button');
   const currPath = data.next.url.path;
-
   addObservers('picture.lazy');
   addObservers('figure.lazy');
   initParallax();
@@ -99,27 +98,39 @@ function initPageListeners(data: BarbaTransitionEvent) {
   }
 }
 
-barba.use(barbaCss);
-barba.init({
-  views: [{
-    namespace: 'fade',
-    beforeEnter(e: BarbaTransitionEvent) {
-      initPageListeners(e);
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
-  }],
-  transitions: [
-    {
-      name: 'fade',
-      to: {
-        namespace: ['fade']
-      },
-      leave() { },
-      enter() { },
-    }
-  ]
+
+
+
+barba.hooks.beforeEnter((e: BarbaTransitionEvent) => {
+  history.scrollRestoration = 'manual';
+  initPageListeners(e);
 });
 
+barba.hooks.afterLeave((e: BarbaTransitionEvent) => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+
+barba.use(barbaCss);
+barba.init({
+  transitions: [{
+    name: 'initial',
+    once() { }
+  }, {
+    name: 'project',
+    to: {
+      namespace: ['project']
+    },
+    leave() { },
+    enter() { }
+  }, {
+    name: 'home',
+    to: {
+      namespace: ['home']
+    },
+    leave() { },
+    enter() { }
+  }]
+});
 
 
 /**

@@ -87,9 +87,9 @@
     border-radius: 12px;
   }
   figcaption {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.32px;
+    @include font-bdo-grotesk-medium;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
     color: var(--text-color);
     margin-bottom: 5px;
   }
@@ -136,8 +136,12 @@
   grid-template-columns: repeat(44, 1fr);
   grid-template-rows: repeat(101, min-content);
   position: relative;
+  @include font-bdo-grotesk-light;
   img {
     border-radius: 12px;
+  }
+  h4 { 
+    @include font-bdo-grotesk-medium;
   }
 }
 
@@ -196,20 +200,20 @@
   grid-column: 1 / -1;
   line-height: 140%;
   h4 {
+    @include font-bdo-grotesk-medium;
     font-size: 16px;
     font-weight: 500;
   }
   &-body {
-    font-size: 16px;
-    font-weight: 300;
-
+    @include font-bdo-grotesk-light;
+    font-size: 1rem;
     display: flex;
     gap: 35px;
   }
 }
 
 .circuit_proposition-activities {
-  font-weight: 300;
+  @include font-bdo-grotesk-light;
   color: #000000;
   border: 1px solid #1e21244e;
   padding: 10px;
@@ -395,14 +399,17 @@ article.section-proposal {
 
 .circuit_single_text {
   &-one {
+    @include font-bdo-grotesk-light;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
   }
   &-two {
+    @include font-bdo-grotesk-light;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
   }
   &-three {
+    @include font-bdo-grotesk-light;
     grid-row: 3 / 4;
     grid-column: 2 / 3;
   }

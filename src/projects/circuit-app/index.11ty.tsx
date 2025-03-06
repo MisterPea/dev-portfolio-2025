@@ -10,7 +10,7 @@ import flowchart from "../../components/flowchart";
 export function Index() {
   return (<>
     <Header />
-    <div className="main_wrapper" data-barba="container" data-barba-namespace="fade">
+    <div className="main_wrapper-circuit" data-barba="container" data-barba-namespace="project">
       <ProjectHeadline
         headline="Circuit App"
         subHeadline="Time Management for Creatives"

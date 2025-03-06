@@ -11,7 +11,7 @@ import flowchart from "../../components/flowchart";
 export function Index() {
   return (<>
     <Header />
-    <div className="main_wrapper" data-barba="container" data-barba-namespace="fade">
+    <div className="main_wrapper-word_salad_sifter" data-barba="container" data-barba-namespace="project">
       <ProjectHeadline
         headline="Word Salad Sifter"
         subHeadline="Uncovering The Important Parts In Job Postings"
