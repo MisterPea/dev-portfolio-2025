@@ -15,11 +15,19 @@ describe( 'Home Page', () => {
   } );
 
   it( 'should toggle dark-mode when button is clicked', () => {
-    const html = document.querySelector( 'html' );
-    const currentMode = html.getAttribute( 'data-color-scheme' );
-    const opposite = currentMode === 'light' ? 'dark' : 'light';
-    cy.get( 'button.dark_mode-button' ).click();
-    cy.get( 'html' ).invoke( 'attr', 'data-color-scheme' ).should( 'eq', opposite );
+    cy.get( 'html' )
+      .invoke( 'attr', 'data-color-scheme' )
+      .then( ( currentMode ) => {
+        const opposite = currentMode === 'light' ? 'dark' : 'light';
+        cy.log( `Current mode: ${currentMode}, Expected after click: ${opposite}` );
+        cy.get( 'button.dark_mode-button' ).click();
+        cy.get( 'html' )
+          .invoke( 'attr', 'data-color-scheme' )
+          .should( 'eq', opposite )
+          .then( ( newMode ) => {
+            cy.log( `New mode after click: ${newMode}` );
+          } );
+      } );
   } );
 
   it( 'should have a section divider for "Selected Works"', () => {
