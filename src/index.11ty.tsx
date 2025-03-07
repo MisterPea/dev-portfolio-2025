@@ -20,6 +20,7 @@ export function Index() {
                     description="A Chrome Extension that gives users the power to uncover the important facets of job postings."
                     imageAlignment="one"
                     link="/projects/word-salad-sifter"
+                    testId="project-one"
                 />
                 <LandingProject
                     images={this.getImageLinks("times_pilot_hero_single.png", "project_hero", "Screen view of The Times Pilot Webpage.", "100vw", placeholder.projTimesPilot)}
@@ -27,6 +28,7 @@ export function Index() {
                     description="Seamlessly curate and receive the stories that matter to you with a custom news aggregator and subscriber-focused daily email service."
                     imageAlignment="two"
                     link="/projects/the-times-pilot"
+                    testId="project-two"
                 />
                 <LandingProject
                     images={this.getImageLinks("circuit_hero.png", "project_hero", "3-up of image of Circuit project", "100vw", placeholder.projCircuitHero)}
@@ -34,6 +36,7 @@ export function Index() {
                     description="An iOS app to empower creatives by bettering focus and eliminating burnout."
                     imageAlignment="three"
                     link="/projects/circuit-app"
+                    testId="project-three"
                 />
             </section>
             <section className="landing-about_section">

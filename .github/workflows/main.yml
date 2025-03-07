@@ -1,0 +1,54 @@
+name: Deploy to S3
+
+on:
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    env:
+      APP_PORT: 8080
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build 11ty project
+        run: npm run deploy-build
+        env:
+          APP_PORT: ${{ env.APP_PORT }}
+
+      - name: Start the application
+        run: npx serve@latest out &
+        env:
+          APP_PORT: ${{ env.APP_PORT }}
+
+      - name: Wait for the application to start
+        run: |
+          timeout 30s bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/localhost/${{ env.APP_PORT }}; do sleep 1; done'
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          wait-on: "http://localhost:${{ env.APP_PORT }}"
+          browser: chrome
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      - run: aws s3 sync ./dist s3://misterpea.me
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.PORTFOLIO_DISTRIBUTION_ID }} --paths "/*"

@@ -8,6 +8,7 @@
     "build:scripts": "NODE_ENV='production' node esbuild.config.mjs",
     "start": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental --watch",
     "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
+    "deploy-build":"npm run build:scripts && npm run build",
     "cy:open": "cypress open"
   },
   "type": "module",

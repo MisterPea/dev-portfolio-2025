@@ -1,14 +1,16 @@
 interface LandingProjectProps {
   title: string;
+  images: string;
   description: string;
-  imageAlignment: 'left' | 'right˝';
-  link: 'string';
+  imageAlignment: string;
+  link: string;
+  testId: string;
 }
 
-export default function LandingProject({ images, title, description, imageAlignment, link }) {
+export default function LandingProject({ images, title, description, imageAlignment, link, testId }: LandingProjectProps) {
 
   return (
-    <a href={link} className="project-anchor">
+    <a href={link} className="project-anchor" data-testid={testId}>
       <article className={`landing-project_card card--${imageAlignment}`}>
         {images}
         <div className="landing-project_card-text">
