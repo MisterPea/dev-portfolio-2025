@@ -30,7 +30,7 @@ jobs:
           APP_PORT: ${{ env.APP_PORT }}
 
       - name: Start the application
-        run: npx serve@latest out &
+        run: npx serve@latest -s out -l 8080 &
         env:
           APP_PORT: ${{ env.APP_PORT }}
 
