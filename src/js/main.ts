@@ -3,7 +3,7 @@ import "./renderEmail";
 import initParallax from "./parallax";
 import spotifyListening from "./spotifyListening";
 import barba from "@barba/core";
-import barbaCss from "@barba/css";
+import { animationEnterOnce, animationEnterUp, animationLeaveUp } from './animations';
 
 interface BarbaUrl {
   href: string;
@@ -110,25 +110,18 @@ barba.hooks.afterLeave((e: BarbaTransitionEvent) => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
 
-barba.use(barbaCss);
+
 barba.init({
   transitions: [{
-    name: 'initial',
-    once() { }
-  }, {
-    name: 'project',
-    to: {
-      namespace: ['project']
+
+    once({ next }: { next: BarbaPage; }) {
+      animationEnterOnce(next.container);
     },
-    leave() { },
-    enter() { }
-  }, {
-    name: 'home',
-    to: {
-      namespace: ['home']
-    },
-    leave() { },
-    enter() { }
+    leave: ({ current }: { current: BarbaPage; }) => animationLeaveUp(current.container),
+    enter({ next }: { next: BarbaPage; }) {
+      console.log("entering");
+      animationEnterUp(next.container);
+    }
   }]
 });
 

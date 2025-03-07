@@ -7,19 +7,21 @@
     "start:scripts": "NODE_ENV='development' node esbuild.config.mjs",
     "build:scripts": "NODE_ENV='production' node esbuild.config.mjs",
     "start": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental --watch",
-    "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts"
+    "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
+    "cy:open": "cypress open"
   },
   "type": "module",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.1-alpha.3",
     "@barba/core": "^2.10.3",
-    "@barba/css": "^2.1.16",
     "@types/common-tags": "^1.8.4",
     "@types/node": "^22.10.10",
     "@types/react-dom": "^19.0.3",
+    "cypress": "^14.1.0",
     "esbuild": "^0.25.0",
     "glob": "^11.0.1",
+    "gsap": "^3.12.7",
     "image-size": "^1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
