@@ -97,10 +97,9 @@ export default function (eleventyConfig: any) {
                         <meta name="description" content="Perry's Portfolio - Developer / Designer / Technologist">
                         <meta name="google" content="nositelinkssearchbox">
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                        <link rel="preload" href="/assets/fonts/BDOGrotesk-DemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-                        <link rel="preload" href="/assets/fonts/BDOGrotesk-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/Neue Haas Grotesk Display Pro 75 Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/Neue Haas Grotesk Display Pro 55 Roman.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+                        <link rel="preload" href="/assets/fonts/Neue Haas Grotesk Display Pro 45 Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
                         <link rel="preload" href="/style/main.css" as="style">
                         <link rel="stylesheet" href="/style/fonts.css">
                         <link rel="stylesheet" href="/style/variables.css">

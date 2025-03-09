@@ -6,30 +6,27 @@
   line-height: 140%;
   letter-spacing: 0.05em;
   h3 {
-    @include font-bdo-grotesk-demi-bold;
-    font-weight: 500;
+    @include font-neue-haas-roman;
   }
   p {
-    @include font-bdo-grotesk-light;
-    font-weight: 300;
+    @include font-neue-haas-light;
+    opacity: 0.8;
   }
   ul {
     margin: 5px 0 0;
     li {
-      @include font-bdo-grotesk-light;
+      @include font-neue-haas-light;
       padding: 0;
       font-size: 1rem;
-      font-weight: 300;
       color: var(--challenge-list-item);
     }
   }
   ol {
     margin: 5px 0 0;
     li {
-      @include font-bdo-grotesk-light;
+      @include font-neue-haas-light;
       padding: 0;
       font-size: 1rem;
-      font-weight: 300;
       color: var(--text-color);
       margin: 10px 0;
     }
@@ -40,8 +37,7 @@
     ul li,
     ol li {
       line-height: 145%;
-      font-size: 18px;
-      // letter-spacing: 0.5px;
+      font-size: 1.125rem;
     }
   }
 }

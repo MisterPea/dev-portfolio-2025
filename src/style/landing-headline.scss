@@ -5,26 +5,22 @@
 
 .landing-headline,
 .landing-headline button {
-  @include font-bdo-grotesk-demi-bold;
+  @include font-neue-haas-roman;
   padding: 120px 0;
   color: var(--text-color);
   font-size: 2rem;
   font-style: normal;
-  font-weight: 300;
-  line-height: 130%;
-  letter-spacing: 0.54px;
+  line-height: 120%;
   background: none;
   border: none;
   
   @include tablet {
     padding: 140px 0 130px;
     font-size: 3.5rem;
-    letter-spacing: 0;
     line-height: 120%;
   }
   @include desktop {
     font-size: 4rem;
-    // font-size: 70px;
     padding: 150px 0;
   }
 

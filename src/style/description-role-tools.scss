@@ -11,18 +11,16 @@
 
 .project_page {
   &-description {
-    @include font-bdo-grotesk-light;
+    @include font-neue-haas-light;
     color: var(--text-color);
     font-size: 1rem;
-    line-height: 140%;
-    letter-spacing: 0.05em;
+    line-height: 135%;
     margin-bottom: 20px;
     @include tablet {
       font-size: 1.25rem;
     }
     @include desktop {
-      font-size: 1.5rem;
-      letter-spacing: 0.05em;
+      font-size: 1.35rem;
     }
   }
 }
@@ -45,14 +43,12 @@
   gap: 25px;
 
   &-label {
-    @include font-bdo-grotesk-light;
-    letter-spacing: 0.05em;
+    @include font-neue-haas-light;
     display: flex;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 1rem;
     color: var(--text-color);
     background-color: var(--proj-button-background);
-    padding-top: 6px;
+    padding-top: 5px;
     padding-bottom: 4px;
     padding-left: 12px;
     padding-right: 8px;
@@ -77,7 +73,7 @@
     &-label {
       font-size: 18px;
       padding-top: 7px;
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       padding-left: 14px;
       padding-right: 10px;
     }
@@ -111,30 +107,27 @@
 // tools and roles
 .project_page-tools_roles {
   h3 {
-    @include font-bdo-grotesk-demi-bold;
+    @include font-neue-haas-roman;
     color: var(--desc-tools-title);
     font-size: 14px;
-    font-weight: 500;
   }
   p {
-    @include font-bdo-grotesk-light;
+    @include font-neue-haas-light;
     color: var(--text-color);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 140%;
-    letter-spacing: 0.05em;
+    font-size: 1rem;
+    line-height:135%;
   }
   @include tablet {
-    line-height: 140%;
+    line-height: 135%;
     margin: 0;
     h3 {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
   @include desktop {
     p,
     h3 {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 }

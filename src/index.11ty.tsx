@@ -55,7 +55,7 @@ export function Index() {
                         <p className="about-colophon-text">
                             Site hand-coded using .tsx as a templating language, CSS/SCSS for styling, vanilla TypeScript for interactions, and
                             {" "}<a href="https://www.11ty.dev" rel="noreferrer" target="_blank" title="Visit 11ty.dev">11ty</a>
-                            {" "}to pull it all together. Typography is set in the <a href="https://lokalcontainer.com/LCT-BDO-Grotesk-Test-Area" rel="noreferrer" target="_blank" title="Visit the Lokal Container Tipografi site">LCT BDO Grotesk</a> typeface.&nbsp;
+                            {" "}to pull it all together. Typography is set in the <a href="https://fonts.adobe.com/fonts/neue-haas-grotesk" rel="noreferrer" target="_blank" title="Visit the Adobe Fonts site">Neue Haas Grotesk</a> typeface.&nbsp;
                             Check out the <a href="https://github.com/MisterPea/dev-portfolio-2025" rel="noreferrer" target="_blank" title="Visit the GitHub repo for this project">repo for this site</a>.
                         </p>
                     </section>

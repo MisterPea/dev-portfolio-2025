@@ -1,15 +1,14 @@
 @use "mixins.scss" as *;
 
 .section_divider {
-  @include font-bdo-grotesk-medium;
   width: 100%;
   height: fit-content;
   border-bottom: 0.75px solid var(--text-color);
-  margin:0 auto 25px;
+  margin: 0 auto 25px;
   h2 {
+    @include font-neue-haas-roman;
     font-size: 1.25rem;
     margin: 0;
-    font-weight: 300;
     color: var(--text-color);
     @include tablet {
       font-size: 1.5rem;

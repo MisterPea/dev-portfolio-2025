@@ -9,7 +9,8 @@
   color: var(--text-color);
   margin-top: 60px;
   h4 {
-    @include font-bdo-grotesk-demi-bold;
+    @include font-neue-haas-roman;
+    font-size: 1.125rem;
     text-align: center;
     grid-row: 1 / 2;
     margin-bottom: 10px;
@@ -28,11 +29,9 @@
     z-index: 1;
     grid-row: 2 / -1;
     p {
-      @include font-bdo-grotesk-light;
-      display: inline;
+      @include font-neue-haas-light;
       font-size: 0.825rem;
       line-height: 130%;
-      letter-spacing: 0.05em;
     }
   }
   picture {
@@ -166,7 +165,7 @@
     grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
     h4 {
-      font-size: 14px;
+      font-size: 1.125rem;
       margin-bottom: 5px;
       color: var(--text-color);
       opacity: 0.8;
@@ -277,6 +276,9 @@
     grid-template-columns: repeat(5, 1fr);
     // margin-right: -20px;
     margin-top: 0;
+    h4 {
+      font-size: 1rem;
+    }
     picture {
       grid-column: 3 / -1;
     }
@@ -300,6 +302,7 @@
     margin-top: 0;
     // gap: 2;
     h4 {
+      font-size: 1rem;
       grid-row: 1 / 2;
     }
     picture {
@@ -336,6 +339,7 @@
     margin-top: 0;
     picture,
     h4 {
+      font-size: 1rem;
       grid-column: 1 / 4;
     }
     .line-group-one {
