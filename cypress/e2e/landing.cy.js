@@ -72,7 +72,7 @@ describe( 'Home Page', () => {
     cy.get( '.about-colophon-text' )
       .find( 'a[href="https://www.11ty.dev"]' );
     cy.get( '.about-colophon-text' )
-      .find( 'a[href="https://lokalcontainer.com/LCT-BDO-Grotesk-Test-Area"]' );
+      .find( 'a[href="https://fonts.adobe.com/fonts/neue-haas-grotesk"]' );
     cy.get( '.about-colophon-text' )
       .find( 'a[href="https://github.com/MisterPea/dev-portfolio-2025"]' );
   } );
