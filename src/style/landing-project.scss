@@ -7,16 +7,15 @@ section.landing-projects_section {
 article.landing-project_card {
   display: block;
   h3 {
-    @include font-bdo-grotesk-demi-bold;
+    @include font-neue-haas-roman;
     font-size: 1rem;
-    line-height: 140%;
+    line-height: 135%;
     margin-top: 10px
   }
   p {
-    @include font-bdo-grotesk-regular;
+    @include font-neue-haas-light;
     font-size: 0.875rem;
-    line-height: 140%;
-    letter-spacing: 0.05em;
+    line-height: 135%;
   }
   &.card--one,
   &.card--two {
@@ -42,7 +41,6 @@ article.landing-project_card {
     p {
       margin-top: 5px;
       font-size: 1rem;
-      letter-spacing: 0.05em;
     }
 
     &.card--one,
@@ -151,10 +149,10 @@ section.landing-about_section {
 
 .about_text {
   color: var(--text-color);
-  @include font-bdo-grotesk-light;
+  @include font-neue-haas-light;
   font-size: 1.125rem;
-  line-height: 140%;
-  letter-spacing: 0.06em;
+  line-height: 135%;
+  letter-spacing: 0.05em;
 }
 
 .about-spotify_inline a {
@@ -166,19 +164,18 @@ section.colophon:first-of-type {
   margin: 50px 0 0;
 }
 .about-colophon-header {
-  @include font-bdo-grotesk-regular;
+  @include font-neue-haas-roman;
   font-size: 1rem;
   margin: 50px 0 2px;
-  font-weight: 400;
   color: var(--text-color);
 }
 .about-colophon-text {
-  @include font-bdo-grotesk-light;
+  @include font-neue-haas-light;
   font-size: 0.875rem;
   margin: 0;
   color: var(--text-color);
-  line-height: 145%;
-  letter-spacing: 0.05em;
+  line-height: 135%;
+  letter-spacing: 0.06em;
   & a {
     text-decoration: underline;
   }
