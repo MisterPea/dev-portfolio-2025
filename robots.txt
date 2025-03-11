@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /style/
+Disallow: /assets/
+Disallow: /js/
+
+Sitemap: https://misterpea.me/sitemap.xml
