@@ -80,6 +80,7 @@ export default function (eleventyConfig: any) {
     };
 
     eleventyConfig.addPassthroughCopy({ "src/fonts": "assets/fonts" });
+    eleventyConfig.addPassthroughCopy({ "src/icons": "/icons" });
 
     eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx");
     eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
@@ -104,6 +105,8 @@ export default function (eleventyConfig: any) {
                         <link rel="stylesheet" href="/style/fonts.css">
                         <link rel="stylesheet" href="/style/variables.css">
                         <link rel="stylesheet" href="/style/main.css">
+                        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+                        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
                         <script defer>
                             (function () {
                                 let prefersDarkMode = localStorage.getItem("prefersDarkMode");
