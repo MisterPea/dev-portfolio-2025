@@ -39,6 +39,7 @@ function writeSongInfo(data: songInfoType) {
     ${is_listening ? "I'm currently listening to" : "I was just listening to"}:</span>
     <span class="about-spotify_inline"><a href=${url} title="View ${track_name} on Spotify" rel="noreferrer" target="_blank">${track_name}</a></span> by 
     <span class="about-spotify_inline"><a href=${url} title="View ${track_name} on Spotify" rel="noreferrer" target="_blank">${artist}</a></span> from the album 
-    <span class="about-spotify_inline"><a href=${url} title="View ${track_name} on Spotify" rel="noreferrer" target="_blank">${album}</a>.</span>
+    <span class="about-spotify_inline"><a href=${url} title="View ${track_name} on Spotify" rel="noreferrer" target="_blank">${album}</a></span> on
+    <span class="about-spotify_inline"><a href="https://open.spotify.com/user/nationalmuziq" rel="noreferrer" target="_blank">Spotify</a><span>.
     `;
 }
