@@ -103,15 +103,15 @@ article.landing-project_card {
       position: relative;
       transition:
         transform 80ms ease,
-        box-shadow 300ms linear;
+        box-shadow 100ms linear;
     }
     article.landing-project_card picture,
     article.landing-project_card .landing-project_card-text {
       position: relative;
       z-index: 1;
       transition:
-        transform 400ms var(--ease-in-out-cubic),
-        filter 600ms var(--easing-expo);
+        transform 200ms ease-in-out,
+        filter 150ms ease-in-out;
       filter: drop-shadow(rgba(0, 0, 0, 0) 2px 2px 2px) drop-shadow(rgba(0, 0, 0, 0) 5px 5px 6px);
     }
 

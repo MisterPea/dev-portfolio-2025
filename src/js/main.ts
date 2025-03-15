@@ -98,18 +98,16 @@ function initPageListeners(data: BarbaTransitionEvent) {
   }
 }
 
-
-
-
+// fires at every before enter
 barba.hooks.beforeEnter((e: BarbaTransitionEvent) => {
   history.scrollRestoration = 'manual';
   initPageListeners(e);
 });
 
+// resets page scroll after leave - this works because we're resetting parent to the animated objs
 barba.hooks.afterLeave((e: BarbaTransitionEvent) => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
-
 
 barba.init({
   transitions: [{
