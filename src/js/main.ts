@@ -117,7 +117,6 @@ barba.init({
     },
     leave: ({ current }: { current: BarbaPage; }) => animationLeaveUp(current.container),
     enter({ next }: { next: BarbaPage; }) {
-      console.log("entering");
       animationEnterUp(next.container);
     }
   }]
@@ -127,7 +126,6 @@ barba.init({
 /**
  * Everything kicks off from here - Called when DOM content is ready.
  */
-// window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const prefersDarkMode = _getDarkModePref();
   const sunMoon = document.querySelector('.svg-inner_div') as HTMLDivElement;
@@ -143,17 +141,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightDarkToggleBtn = document.querySelector('.dark_mode-button');
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
 
-
-
-  // We want to wait two paint cycles to let our classes set
-  // if (mainDiv) {
-  //   requestAnimationFrame(() => {
-  //     requestAnimationFrame(() => {
-  //       mainDiv.classList.add("is-interactive");
-  //     });
-  //   });
-  // }
-
-  // initiateAnimateTransition();
-
+  console.log(`%c    Thanks for checking me out!
+    Interested in working together?
+    Let's connect:
+    Say hello via LinkedIn or Email (on the site footer)
+    
+    • https://github.com/MisterPea
+    • https://www.linkedin.com/in/perry-angelora/
+    %c
+    ..............................
+    ..............___............. 
+    ............./\\  \\............
+    ............/::\\  \\........... 
+    .........../:/\\:\\__\\..........
+    ........../:/ /:/  /..........
+    ........./:/_/:/  /........... 
+    .........\\:\\/:/  /............
+    ..........\\::/__/............. 
+    ...........\\:\\  \\............. 
+    ............\\:\\__\\............
+    .............\\/__/............
+    ..............................
+    `, 'color:rgb(110, 133, 159); font-size: 12px;', 'color: rgb(110, 133, 159); font-size: 12px; font-family: monospace, monospace-ui');
 });

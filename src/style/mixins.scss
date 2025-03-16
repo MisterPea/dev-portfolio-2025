@@ -50,18 +50,15 @@ $desktop-lg: 1350px;
 }
 
 @mixin font-neue-haas-bold {
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "Neue Haas Grotesk Display Pro", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-display: swap;
 }
 @mixin font-neue-haas-roman {
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "Neue Haas Grotesk Display Pro", Helvetica, Arial, sans-serif;
   font-weight: 450;
-  font-display: swap;
 }
 @mixin font-neue-haas-light {
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "Neue Haas Grotesk Display Pro", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-display: swap;
   letter-spacing: 0.025em;
 }
