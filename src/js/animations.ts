@@ -2,28 +2,34 @@ import gsap from "gsap";
 
 export const animationEnterOnce = (container: HTMLElement) => {
   const tl = gsap.timeline();
+  // we're calculating height of h1 in vh
+  const height = gsap.getProperty(".main_wrapper-home h1", 'height', 'vh');
+  const h1Height = +(height as string).split('vh')[0];
   tl.from(".main_wrapper-home", {
     opacity: 0,
     duration: 2,
-    ease: 'none'
+    ease: 'none',
+    delay: 0.4
   });
   tl.from(".main_wrapper-home", {
-    y: '30vh',
-    duration: 1,
-    ease: 'expo.inOut',
+    // vertical center text
+    y: `${50 - (h1Height / 2)}vh`,
+    transformOrigin: 'center',
+    duration: 0.75,
+    ease: 'power3.inOut',
   });
-  tl.from(".main_wrapper-home span",
-    {
-      opacity: 0,
-      duration: 0.6,
-      ease: 'expo.inOut'
-    }, ('-=0.8'));
   tl.from(".landing-projects_section", {
     opacity: 0,
     duration: 0.8,
     ease: 'sine.out',
     display: 'none'
-  });
+  },('-=0.25'));
+  tl.from(".main_wrapper-home span",
+    {
+      opacity: 0,
+      duration: 0.6,
+      ease: 'none'
+    }, ('-=0.7'));
   tl.from(".landing-about_section", {
     opacity: 0,
     duration: 0.6,

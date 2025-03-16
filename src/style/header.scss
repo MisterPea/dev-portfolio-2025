@@ -33,8 +33,6 @@ header {
   mix-blend-mode: difference;
 
   h1 {
-    // text-shadow: rgb(255, 255, 255) 1px 1px,rgb(255, 255, 255) -1px -1px,;
-    // background-color: salmon;
     -webkit-text-stroke: 1px #ffffff;
     color: #000000;
     position: relative;
@@ -64,6 +62,7 @@ header {
     position: relative;
     cursor: pointer;
     z-index: 1;
+    transform: translateZ(1);
   }
 
   .svg_wrapper {
@@ -82,7 +81,21 @@ header {
   }
 
   .home-button.enabled {
-    transform: scale(1);
+    transform: scale3d(1, 1, 1) translateZ(1);
+    div svg path {
+      stroke: #ffffff;
+      stroke-width: 0%;
+      transition: stroke-width 400ms cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    @media (hover: hover) {
+      &:hover {
+        transform: scale3d(1.1, 1.1, 1);
+        div svg path {
+          stroke: #ffffff;
+          stroke-width: 2%;
+        }
+      }
+    }
   }
 
   .home-button.disabled {

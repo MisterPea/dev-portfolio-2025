@@ -274,7 +274,6 @@
   .circuit-design_consideration_diagram-one {
     grid-column: 1 / 6;
     grid-template-columns: repeat(5, 1fr);
-    // margin-right: -20px;
     margin-top: 0;
     h4 {
       font-size: 1rem;
@@ -300,7 +299,6 @@
     grid-row: auto auto auto;
     grid-column: 6 / 9;
     margin-top: 0;
-    // gap: 2;
     h4 {
       font-size: 1rem;
       grid-row: 1 / 2;
