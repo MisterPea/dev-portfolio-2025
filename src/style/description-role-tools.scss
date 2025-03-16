@@ -96,11 +96,19 @@
   }
 }
 .project_page-links {
-  transform: translate(0, 0);
-}
-.project_page-links a:hover {
   .project_page-links-icon {
-    transform: translate(8%, -8%);
+    transform: translate(0, 0);
+  }
+}
+.project_page-links a {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+@media (hover: hover) {
+  .project_page-links a:hover {
+    transform: scale(1.025);
+    .project_page-links-icon {
+      transform: translate(8%, -8%);
+    }
   }
 }
 
@@ -115,7 +123,7 @@
     @include font-neue-haas-light;
     color: var(--text-color);
     font-size: 1rem;
-    line-height:135%;
+    line-height: 135%;
   }
   @include tablet {
     line-height: 135%;
@@ -163,7 +171,6 @@
 
 .page_circuit-app-hero_wrap {
   display: flex;
-  // gap: 20px;
   gap: clamp(20px, 5.5vw, 80px);
   img {
     border-radius: 17.2% / 7.8%;
