@@ -10,7 +10,7 @@ export function Index() {
         <Header />
         <div className="main_wrapper-home" data-barba="container" data-barba-namespace="home">
             <h1 className="landing-headline">I&apos;m Perry, Design-Minded Developer and Programmatic Pixel Pusher based in Brooklyn, NY.&nbsp;
-                <span><button title="Send an email" aria-label="Send email" className="render-mail">Say Hello!</button></span>
+                <span><button title="Send an email" aria-label="Send email" className="say_hello_btn render-hello-mail">Say Hello!</button></span>
             </h1>
             <section className="landing-projects_section">
                 <SectionDivider label="Selected Works" className="landing-divider" />

@@ -8,11 +8,11 @@ const imageObserver = new IntersectionObserver((entries, obs) => {
   });
 }, {
   root: null,
-  rootMargin: '10px',
+  rootMargin: '100px',
   threshold: 0.1,
 });
 
-// Observer for images
+// Observer for video
 const videoObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.isIntersecting) {

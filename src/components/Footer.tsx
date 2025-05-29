@@ -23,7 +23,7 @@ export default function Footer() {
             </svg>
           </div>
         </a>
-        <button title="Send an email" aria-label="Send email" className="footer-btn render-mail">
+        <button title="Send an email" aria-label="Send email" className="footer-btn render-footer-mail">
           <div className="footer-svg_wrapper email-div">
             <svg data-name="Email" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.02 40.04">
               <path d="M19.44,22.4l-8.9-8.16v12.69h18.96v-12.69l-8.9,8.16c-.33.3-.84.3-1.17,0Z" />

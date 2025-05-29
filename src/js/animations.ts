@@ -20,10 +20,10 @@ export const animationEnterOnce = (container: HTMLElement) => {
   });
   tl.from(".landing-projects_section", {
     opacity: 0,
-    duration: 0.8,
+    duration: 1,
     ease: 'sine.out',
     display: 'none'
-  },('-=0.25'));
+  }, ('-=0.25'));
   tl.from(".main_wrapper-home span",
     {
       opacity: 0,
@@ -32,18 +32,18 @@ export const animationEnterOnce = (container: HTMLElement) => {
     }, ('-=0.7'));
   tl.from(".landing-about_section", {
     opacity: 0,
-    duration: 0.6,
+    duration: 1,
     ease: 'sine.out',
     display: 'none'
   });
   tl.from("header", {
     opacity: 0,
-    duration: 0.8,
+    duration: 1,
     ease: 'sine.out'
   }, ("-=1.2"));
   tl.from("footer", {
     opacity: 0,
-    duration: 0.8,
+    duration: 1,
     ease: 'sine.out',
     display: 'none'
   }, ("-=0.5"));
@@ -53,7 +53,7 @@ export const animationEnterOnce = (container: HTMLElement) => {
 export const animationLeaveUp = (container: HTMLElement) => {
   return gsap.to(container, {
     autoAlpha: 0,
-    duration: 0.8,
+    duration: 1,
     clearProps: 'all',
     ease: 'expo.in',
     yPercent: -10,

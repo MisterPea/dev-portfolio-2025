@@ -1,4 +1,4 @@
-function renderEmail() {
+export function renderEmail() {
   const decoded = [];
   const sorted = ' _:!?.@=abceghijJlmnoprstuy';
   const numArray = [
@@ -14,11 +14,26 @@ function renderEmail() {
   return decoded.join('');
 }
 
-const emailBtn = document.querySelectorAll('.render-mail');
-emailBtn.forEach((btn: HTMLButtonElement) => {
-  btn.addEventListener('click', () => {
-    const anchor = document.createElement('a');
-    anchor.href = renderEmail();
-    anchor.click();
+export function initFooterButton() {
+  const footerEmailBtn = document.querySelectorAll('.render-footer-mail');
+  footerEmailBtn.forEach((btn: HTMLButtonElement) => {
+    btn.addEventListener('click', () => {
+      const anchor = document.createElement('a');
+      anchor.href = renderEmail();
+      anchor.click();
+    });
   });
-});
+}
+
+// We have to separate this logic from the footer email because on page transitions we're
+// losing reference to the 'Say Hello!' button (but not the footer)
+export function initHelloButtonEmail() {
+  const helloEmailBtn = document.querySelectorAll('.render-hello-mail');
+  helloEmailBtn.forEach((btn: HTMLButtonElement) => {
+    btn.addEventListener('click', () => {
+      const anchor = document.createElement('a');
+      anchor.href = renderEmail();
+      anchor.click();
+    });
+  });
+}
