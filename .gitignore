@@ -8,3 +8,5 @@
 .env
 spotify_lambda/node_modules
 spotify_lambda/function.zip
+.vscode/settings.json
+cypress/downloads

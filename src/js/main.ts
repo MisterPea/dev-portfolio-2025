@@ -1,5 +1,5 @@
 import { addObservers } from "./intersectionFunctions";
-import "./renderEmail";
+import { initFooterButton, initHelloButtonEmail } from "./renderEmail";
 import initParallax from "./parallax";
 import spotifyListening from "./spotifyListening";
 import barba from "@barba/core";
@@ -87,8 +87,9 @@ function initPageListeners(data: BarbaTransitionEvent) {
   addObservers('figure.lazy');
   initParallax();
   if (currPath === '/') {
-    // only load spotify on root & add 
+    // only load spotify on root
     spotifyListening();
+    initHelloButtonEmail();
     homeBtn.classList.remove('enabled');
     if (!homeBtn.classList.contains('disabled')) homeBtn.classList.add('disabled');
   } else {
@@ -97,6 +98,8 @@ function initPageListeners(data: BarbaTransitionEvent) {
     if (!homeBtn.classList.contains('enabled')) homeBtn.classList.add('enabled');
   }
 }
+
+
 
 // fires at every before enter
 barba.hooks.beforeEnter((e: BarbaTransitionEvent) => {
@@ -140,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const lightDarkToggleBtn = document.querySelector('.dark_mode-button');
   if (lightDarkToggleBtn) lightDarkToggleBtn.addEventListener('click', () => toggleDarkMode());
+
+  initFooterButton();
 
   console.log(`%c    Thanks for checking me out!
     Interested in working together?

@@ -83,6 +83,6 @@ describe( 'Home Page', () => {
     cy.get( 'footer' )
       .find( 'a[href="https://github.com/MisterPea"]' );
     cy.get( 'footer' )
-      .find( 'button[class*="render-mail"]' );
+      .find( 'button[class*="render-footer-mail"]' );
   } );
 } );
